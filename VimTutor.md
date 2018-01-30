@@ -245,6 +245,12 @@ vim deneme -s script.vim (in script.vim both command-line {with :} and normal mo
 :%!<command> -->to pass the current buffer from a command (:%!tac or :%!nl)
 :3,$! sort -u --> send line range (3 to EOF) as buffer to command
 
+split and vsplit
+vim -o <filename1> <filename2>
+vim -O <filename1> <filename2>
+https://codeincomplete.com/posts/split-windows-and-tabs-in-vim/
+
+
 # Additional Resources
 
 Cheat sheets:
