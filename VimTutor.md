@@ -42,6 +42,8 @@
 
 9. Copy paste: Visual mode with  v, yank with y, p
 
+10. Named buffers
+
 --------------
 
 # More on Navigation and Search
@@ -69,6 +71,8 @@ enter/return to move to the beginning of the file
 
 **Example II:** Move to a line using the line number in command-line mode
 - Hit ESC, type `:`, then type the number of the line, hit enter/return
+
+#### 3. Marks
 
 #### 3. Search for a pattern within the text file
 
@@ -108,6 +112,16 @@ Substitute the firsy instances of "rabbit" with "squirrel".
 - Type `:` to start the command-line mode and write `s/rabbit/squirrel`
 and hit enter/return
 - Type `:` to start the command-line then type `wq` and hit enter/return
+
+On the command-line mode we issued two distinct directives, `s/rabbit/squirrel`
+and `wq`. Instead of doing the substitution and write&quit in two steps
+we could have stack the commands using the pipe sign `|` which acts as
+an "and".
+
+- Type `:` to start the command-line mode and write `s/rabbit/squirrel | wq`
+and hit enter/return
+- Typing `:s/rabbit/squirrel | w | q` and hitting enter/return will
+accomplish the same task
 <p>
 
 **Example II:** Replace the first instance of "rabbit" with "squirrel"
@@ -207,10 +221,12 @@ without starting the UI.
 
 - In your bash terminal type the following:
 ```bash
-vim animals.txt -c '%s/foo/bar/g | wq'
+vim animals.txt -c '%s/wolf/fox/g | wq'
 ```
 
-You may recognize
+You may recognize `%s/wolf/fox/g` and `wq` commands as we used them
+to substitute all instances of "wolf" with "fox" in *animals.txt* and
+save&quit the file respectively.
 
 <p>
 
