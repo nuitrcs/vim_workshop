@@ -67,20 +67,98 @@ enter/return to move to the beginning of the file
 #### 2. Moving to an arbitrary line
 
 **Example I:** Move to a line using the line number in command mode
-- Hit ESC, type the number of the line and then type `G`
+- Hit ESC, type the number of the line, say 14, and then type `G` (i.e.
+SHIFT+g)
 
 **Example II:** Move to a line using the line number in command-line mode
-- Hit ESC, type `:`, then type the number of the line, hit enter/return
+- Hit ESC, type `:`, then type the number of the line, say 23, hit
+enter/return
 
-#### 3. Marks
+**Example III:** Let's make sure we moved to 23rd line by showing the
+line numbers before each line.
+- Hit ESC, type `:set nu` (or equally `:set number`), hit enter/return
+- Type `:set nonu` (or equally `:set nonumber`) and hit enter/return to
+hide the line numbers
 
-#### 3. Search for a pattern within the text file
+#### 3. Using Marks
+A mark is location identifier which allows you to return to the same
+location later. When you set a mark there is no visible indication on
+the file. Each buffer (or practically the file) has its own default
+marks (i.e. lowercase letters from a to z). The marks are persistent for
+the files as long as you retain .viminfo file which includes the metadata
+about marks, command-line history, search strings, buffers etc.
 
-**Example I:** Move to the
-- Hit ESC,
+**Example I:** Let's set mark "a" on the first comma (,) of the 9<sup>th</sup>
+line in *animals.txt*. After setting "a" mark for this location move to
+the end of the file. Using the mark, return to original location.
+- Hit ESC, type `9G` (navigate to line 9) and move to the
+first comma by hitting `l` key (or right arrow key)
+- Type `ma` (while on the command mode) to set the mark "a" to the
+cursor location.
+- Type `G` to move to the last line of the file
+- Type `` `a `` to move back to the mark's position
+- If you type `'a`, this will take you to the beginning of line on which
+mark "a" has been set
 
-Type  /  followed by a phrase to search for the phrase
+**Example II:** Set mark "c" on the second comma (,) of the 20<sup>th</sup>
+in *animals.txt*.
+- Hit ESC, type `20G` (navigate to line 20) and move to the
+second comma by hitting `l` key (or right arrow key)
+- Type `mc` (while on the command mode) to set the mark "c" to the
+cursor location.
 
+
+**Example III:** Now we have to marks "a" and "c", it will be useful to
+know how to review current marks.
+- Hit ESC, type `:` to switch to command-line mode
+- Type `marks` while in command-line mode and hit enter/return. This will
+list all the default and user defined marks.
+
+
+#### 4. Search for a pattern within the text file
+Another strong suite of Vim lies in its pattern search functionality. It
+is possible to search just for just a pattern, multiple patterns,
+whole words, patterns that are in specific order, duplicate words etc.
+
+**Example I:** Find the first *bear* pattern in *animals.txt* file
+from the command mode.
+- Hit ESC to switch to command mode then type `/bear` and hit enter/return
+
+Forward slash, `/`, is used to search the trailing pattern, in this case
+"bear". Consequently, `/bear` will find the first matching pattern after
+the cursor's current location and move the cursor to the beginning of
+the pattern
+
+**Example II:** Find the next *bear* pattern in *animals.txt*
+file from the command mode.
+- Hit ESC to switch to command mode then hit `n`
+
+Each time you hit `n` the next matching pattern will be found and the
+cursor will move to that location
+
+**Example III:** Find the previous *bear* pattern in *animals.txt*
+file from the command mode.
+- Hit ESC to switch to command mode then hit `N` (i.e. SHIFT+n)
+
+Each time you hit `N` the previous matching pattern will be found and
+the cursor will move to that location
+
+**Example IV:** Find the pattern *badger* only if it is a whole word
+in *animals.txt* file from the command mode.
+- Hit ESC to switch to command mode
+- Type `/` first before the pattern to be searched
+- Type `\<badger\>` and hit ENTER/RETURN
+
+Since we are looking for a whole word, a simply searching for "badger"
+using `/badger` will not be useful as it will find any pattern containing
+"badger" such as "honeybadger". To search whole words, we should use
+`\<pattern\>` where `\<` represents the beginning of a word, and
+`\>` represents the end of the word.
+
+**Example V:** Find the next line containing *bear* pattern in
+*animals.txt* file from the command-line mode.
+- Hit ESC and type `:` to go to command-line mode
+- Type `/bear` and hit enter/return
 
 #### 5. To search for the same phrase again, simply type  n .
    To search for the same phrase in the opposite direction, type  N .
@@ -96,7 +174,7 @@ for substitute). The general format of a substitute is `s/foo/bar` where
 <p>
 
 **Example I:** Replace the first instance of "rabbit" with "squirrel"
-in the 2nd line of *animals.txt* using substitute. Save and exit.
+in the 2<sup>th</sup> line of *animals.txt* using substitute. Save and exit.
 
 </p>First let's create a backup file i.e. *animals_bckp.txt*
 for *animals.txt*, then open *animals.txt* using vim from the terminal.
@@ -200,9 +278,7 @@ vim animals.txt
 
 `i` at the end is used to make the search case insensitive.
 
-
 --------------
-
 # More on Editing Text From Bash Shell (no UI)
 
 In cases where you need to repeat some specific tasks in editing your
