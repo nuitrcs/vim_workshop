@@ -160,7 +160,7 @@ using `/badger` will not be useful as it will find any pattern containing
 - Hit ESC and type `:` to go to command-line mode
 - Type `/bear` and hit enter/return
 
-#### 5. To search for the same phrase again, simply type  n .
+#### 5.  .
    To search for the same phrase in the opposite direction, type  N .
 
 #### 6. Text substitution (or find&replace)
@@ -302,16 +302,32 @@ vim animals.txt -c '%s/wolf/fox/g | wq'
 
 You may recognize `%s/wolf/fox/g` and `wq` commands as we used them
 to substitute all instances of "wolf" with "fox" in *animals.txt* and
-save&quit the file respectively.
+save&quit the file respectively when in command-line mode. The flag "-c"
+executes the following command as if the vim is operating in command-line
+mode.
 
 <p>
 
-**Example II:** Replace all instances of "wolf" with "fox"
-in all the lines of *animals.txt* using Vim's substitute function
-without starting the UI.
+**Example II:** Prepare a vim script (say *operations.vim*) that includes
+the commands to be applied on the *animals.txt*. The commands should \
+replace all instances of "bear" with "giraffe" in all the lines of
+*animals.txt*, save the file and exit.
 
-vim deneme -S script.vim (in script.vim commands-line mode commands without :)
-vim deneme -s script.vim (in script.vim both command-line {with :} and normal mode commands {without :} )
+- First create the file *operations.vim*
+```bash
+vim operations.vim
+```
+- Switch to insert mode by hitting `i`
+- Type `:%s/bear/giraffe/g` on the first line of *operations.vim*
+- Type `ZZ` on the second line of the *operations.vim*
+- Switch to command mode by hitting ESC and save&quit by hitting `ZZ`
+- Run the command below in the terminal:
+```bash
+vim animals.txt -s operations.vim
+```
+
+The flag "-s" readsnNormal mode commands from a script file and applies
+them to the input file
 
 # Running shell commands from inside the vim
 :! <command> --> runs the command
@@ -320,6 +336,29 @@ vim deneme -s script.vim (in script.vim both command-line {with :} and normal mo
 :r !<command>  --> push the output of command into the current buffer
 :%!<command> -->to pass the current buffer from a command (:%!tac or :%!nl)
 :3,$! sort -u --> send line range (3 to EOF) as buffer to command
+
+# Using split windows for different files in Vim
+It is possible to open multiple files spreading horizontally or
+vertically in a single UI window. This can be achieved while you are
+starting the UI or from within the UI.
+
+**Example I:** Open the two files *animals.txt* and *basics.txt* in a
+split windows oriented horizontally, then quit all without saving.
+
+- Issue the following command on your terminal
+```bash
+vim -o animals.txt basics.txt
+```
+- Once the split windows are opened switch to command-line mode 
+
+
+**Example II:** Open the two files *animals.txt* and *basics.txt* in a
+split windows oriented vertically
+
+**Example III**
+
+in all the lines of *animals.txt* using Vim's substitute function
+without starting the UI.
 
 split and vsplit
 vim -o <filename1> <filename2>
