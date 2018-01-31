@@ -1,48 +1,158 @@
 # The very basics
 
-0. (Install and) Start Vim (Installation instructions will be provided prior to training)
+### Introduction
 
-1. Vi versus Vim?
+1. What is Vim?
+    - Vim stands for "**Vi Improved**". It's a clone of the text editor "vi".
+    - Vim is included as "vi" with most UNIX systems and with Apple OS X.
+2. Why Vim?
+    - Vim is free and open source. It also a charityware that gives support to poor children in Uganda!
+    - Vim is available for many platforms. Vim has a graphic user interface, with menus and support for the mouse, while it also supports textmode in terminals， which is perfect for remote access/administration (like Quest).
+    - Vim is perfect for programming. Vim supports all great features for code editors: auto-completion, syntax highlighting, screen split, and so on.
+    - Vim is highly configurable. With some extra plugins, it works just like an IDE (Integrated Development Environment, such as visual studio), but much faster!
 
-2. Three modes: insert mode, command mode and command-line mode
-    - Switching to insert mode: Press i when in command mode
-    - Switching to command mode: Press <ESC> to exit back to command mode from any other mode
-    - Switching to command-line mode: Press ":" when in command mode
+### Different Modes in Vim
 
-4. Navigation: h, j, k, l (or arrow keys)
+One of the most important concepts in Vim is modes. This is the major difference between Vim and other text editors like Notepad in Windows and gedit in Linux. Here is a short overview of each mode available in vim:
 
-5. How to no-save/quit, save/quit: q!, wq, x, ZZ
+- Normal mode: For navigation and manipulation of text. This is the default mode when you start Vim. Press `<ESC>` to exit back to normal mode from other modes.
+- Insert mode: For inserting new text. Insert mode can be reached in several ways, e.g., pressing `i` when in normal mode.
+- Command-line mode: For entering editor commands, such as help, search, save, quit. Press `:` when in normal mode to enter command-line mode.
+- Visual mode: For navigation and manipulation of text selections. This mode allows you to perform most normal commands, and a few extra commands, on selected text. Press `v` when in normal mode to enter visual mode.
+
+**Example I:** Navigation in Vim with `hjkl`.
+
+In Vim normal mode, commands `h`, `j`, `k`, `l` are used to move cursor left, right, up or down. Arrow keys can also be used to move cursor, however, using `hjkl` will allow you to navigate faster once you get used to it.
+
+- Open *introduction.txt* using vim from the terminal
+```bash
+vim introduction.txt
+```
+- Make sure you are in normal mode by hitting `ESC`.
+- Press `h`, `j`, `k`, `l` to move your cursor around until you feel comfortable with that.
+
+**Example II:** Insert text in Line 2 of *introduction.txt*.
+
+- Open *introduction.txt* and make sure you are in normal mode by hitting `ESC`.
+- Navigate to Line 2 (empty) with `j`.
+- Press `i`, and you should notice the bottom left shows "-- INSERT --", which indicates you have switched to insert mode. Now you can type new text as you like.
+- Exit back to normal mode by hitting `ESC`. Leave it open for next example.
+
+Command `i` is used to insert text right before the cursor. There are many other similar commands that allow you to switch to insert mode, but in different positions. E.g.,
+
+- Command `a` is used to insert text AFTER the cursor.
+- Command `A` is used to insert text after the end of the line.
+- Command `o` is used to open a line BELOW the cursor and start insert mode.
+- Command `O` is used to open a line ABOVE the cursor.
+
+You can also try them in Example II.
+
+**Example III:** Quit with/without saving in Vim
+
+- In the opened *introduction.txt*, type `:q!` and hit `ENTER` to exit WITHOUT saving the changes.
+- Reopen *introduction.txt*, insert some text with commands `o` or `a`. Type `:wq` and hit `ENTER` to exit WITH saving the changes.
 
 --------------
 
 # More on Text Editing
 
-1. Delete command: d
+Let's discuss about Vim text edit techniques in details. For these exercises we will use *editing.txt*.
 
-2. Using motion
+### 1. Deletion Command
 
-    d   motion
-    - w - until the start of the next word, EXCLUDING its first character.
-    - e - to the end of the current word, INCLUDING the last character.
-    - $ - to the end of the line, INCLUDING the last character.
+Command `x` is used to delete the character under the cursor.
 
-3.  Using count for a motion
+**Example I:** Correct the text lines marked by -->.
 
-    d   number   motion
+- Open *editing.txt* and navigate to Example I. Make sure you are in normal mode by hitting `ESC`.
+- Move your cursor to the character you want to delete, hit `x`
+- Repeat until all lines marked by --> are corrected.
 
-4. Undo command: u
+Command `d` is also for deletion. It can be combined with a motion command. E.g. `dw` is used to delete a word, and `d$` is used to delete to the end of the line.
 
-5. Put command: p
+**Example II:** Correct the text lines marked by -->.
 
-6. Replace command: r
+- Open *editing.txt* and navigate to Example II. Make sure you are in normal mode by hitting `ESC`.
+- Move your cursor to the beginning of the word you want to delete, hit `dw`.
+- Repeat until all lines marked by --> are corrected.
 
-7. Change command: c
+**Example III:** Correct the text lines marked by -->.
 
-8. Other insert commands: o, a
+- Open *editing.txt* and navigate to Example III. Make sure you are in normal mode by hitting `ESC`.
+- Move your cursor to character "&", hit `d$`.
+- Repeat until all lines marked by --> are corrected.
 
-9. Copy paste: Visual mode with  v, yank with y, p
+A **count** can be inserted before the motion to delete more. E.g., `d2w` is used to two words at one time.
 
-10. Named buffers
+**Example IV:** Delete all UPCASE words marked by -->.
+
+- Open *editing.txt* and navigate to Example IV. Make sure you are in normal mode by hitting `ESC`.
+- Move your the first "MEOW", hit `d3w` to delete "MEOW MEOW MEOW".
+- Repeat until all lines marked by --> are corrected.
+
+In addition to those mentioned above, command `dd` can be used to delete a whole line. Note here to delete multiple lines with count, use `3dd`, rather than `d3d`.
+
+**Example V:** Delete all lines marked by -->
+
+- Open *editing.txt* and navigate to Example V. Make sure you are in normal mode by hitting `ESC`.
+- Move your the cursor to anywhere of a line marked by -->, and hit `dd`
+- Repeat until all lines marked by --> are deleted. You can also try use `3dd` to delete three lines together.
+
+### 2. Put Command
+
+The text deleted last time is stored and can be put back with command `p`. This works just like cut & paste in other editors like notepad.
+
+**Example VI:** Correct the text lines marked by -->.
+
+- Open *editing.txt* and navigate to Example VI. Make sure you are in normal mode by hitting `ESC`.
+- Move your the cursor to the beginning of word "some", and hit `dw`.
+- Move your the cursor to the space behind word "are", and hit `p`. You should have moved word some to the correct position.
+- Repeat until all lines marked by --> are deleted.
+
+### 3. Replace Command
+
+Command `r` is to replace one character at the cursor with new character you input. The command capital `R` is used to replace more than one character.
+
+**Example VII:** Correct the text lines marked by -->.
+
+- Open *editing.txt* and navigate to Example VII. Make sure you are in normal mode by hitting `ESC`.
+- Move your the cursor to the character "u" in word "sume", and hit `ro`. You should have corrected character "u" by "o". It also automatically switches back to normal mode.
+- Move your the cursor to the character "q" in word "misqhdsi", and hit `Rtake`. You should have corrected the word "misqhdsi" by "mistake". Hit `ESC` to switch back to normal mode.
+
+### 4. Change Command
+
+The change command `c` works very similarly as command `d`. It removes the text corresponding to the motion, and switches you to insert mode. E.g., command `cw` removes the word and switches to insert mode so that you can type anything you wish to replace the original content.
+
+**Example VIII:** Correct the text lines marked by -->.
+
+- Open *editing.txt* and navigate to Example VIII. Make sure you are in normal mode by hitting `ESC`.
+- Move your the cursor to the beginning of word "abcd", and hit `cw`. Type the correct word "some" and hit `ESC` to switch back to normal mode.
+- Move your the cursor to character "&", and hit `c$`. Type the correct content and hit `ESC` to switch back to normal mode.
+
+### 5. Visual Mode
+
+Command `v` is used to select text visually. After hit `v`, you will be switched to visual mode, and by moving cursor you can change the range of text being selected. The visually selected text can be copied use command `y` and pasted with command `p`.  
+
+**Example IX:** Complete the text lines marked by -->.
+
+- Open *editing.txt* and navigate to Example IX. Make sure you are in normal mode by hitting `ESC`.
+- Move your the cursor to the beginning of word "are", and hit `v`. Now you are switched to visual mode. Navigate your cursor to the end of line to select the text you would like to copy.
+- Hit `y` to copy, and you will be automatically switched back to normal mode.
+- Navigate to the position you want to paste, hit `p`.
+
+Command `y` can be also used similarly as `d` or `c` by combining it with motion. E.g., you can use `y$` in the example above.
+
+### 6. Undo command
+
+To undo your last command, use command `u`.
+
+**Example X:** Correct the text lines marked by -->, then undo the correction.
+
+- Open *editing.txt* and navigate to Example X. Make sure you are in normal mode by hitting `ESC`.
+- Use command `x` to correct the line marked by -->.
+- Now hit `u`, it will undo your last deletion. Hit `u` again, it will redo your second last deletion.
+
+### 7. Named buffers
 
 --------------
 
@@ -349,7 +459,7 @@ split windows oriented horizontally, then quit all without saving.
 ```bash
 vim -o animals.txt basics.txt
 ```
-- Once the split windows are opened switch to command-line mode 
+- Once the split windows are opened switch to command-line mode
 
 
 **Example II:** Open the two files *animals.txt* and *basics.txt* in a
