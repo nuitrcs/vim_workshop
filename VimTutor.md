@@ -454,16 +454,23 @@ starting the UI or from within the UI.
 
 **Example I:** Open the two files *animals.txt* and *basics.txt* in a
 split windows oriented horizontally, then quit all without saving.
-
 - Issue the following command on your terminal
 ```bash
 vim -o animals.txt basics.txt
 ```
-- Once the split windows are opened switch to command-line mode
-
+- Once the split windows are opened switch to command-line mode by
+typing `:`
+- Type `q!` and hit ENTER/RETURN
 
 **Example II:** Open the two files *animals.txt* and *basics.txt* in a
-split windows oriented vertically
+split windows oriented vertically, then quit all without saving.
+- Issue the following command on your terminal
+```bash
+vim -O animals.txt basics.txt
+```
+- Once the split windows are opened switch to command-line mode by
+typing `:`
+- Type `q!` and hit ENTER/RETURN
 
 **Example III**
 
