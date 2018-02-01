@@ -148,7 +148,7 @@ use `3dd` to delete three lines together.
 The text deleted last time is stored and can be put back with command
 `p`. This works just like cut & paste in other editors like notepad.
 
-**Example I:** Correct the text lines marked by -->.
+**Example VI:** Correct the text lines marked by -->.
 
 - Open *editing.txt* and navigate to Example VI. Make sure you are in
 normal mode by hitting `ESC`.
@@ -163,7 +163,7 @@ Command `r` is to replace one character at the cursor with new character
 you input. The command capital `R` is used to replace more than one
 character.
 
-**Example I:** Correct the text lines marked by -->.
+**Example VII:** Correct the text lines marked by -->.
 
 - Open *editing.txt* and navigate to Example VII. Make sure you are in
 normal mode by hitting `ESC`.
@@ -181,7 +181,7 @@ the text corresponding to the motion, and switches you to insert mode.
 E.g., command `cw` removes the word and switches to insert mode so that
 you can type anything you wish to replace the original content.
 
-**Example I:** Correct the text lines marked by -->.
+**Example VIII:** Correct the text lines marked by -->.
 
 - Open *editing.txt* and navigate to Example VIII. Make sure you are in
 normal mode by hitting `ESC`.
@@ -197,7 +197,7 @@ switched to visual mode, and by moving cursor you can change the range
 of text being selected. The visually selected text can be copied use
 command `y` and pasted with command `p`.
 
-**Example I:** Complete the text lines marked by -->.
+**Example IX:** Complete the text lines marked by -->.
 
 - Open *editing.txt* and navigate to Example IX. Make sure you are in
 normal mode by hitting `ESC`.
@@ -215,7 +215,7 @@ with motion. E.g., you can use `y$` in the example above.
 
 To undo your last command, use command `u`.
 
-**Example I:** Correct the text lines marked by -->, then undo the
+**Example X:** Correct the text lines marked by -->, then undo the
 correction.
 - Open *editing.txt* and navigate to Example X. Make sure you are in
 normal mode by hitting `ESC`.
@@ -247,15 +247,15 @@ enter/return to move to the beginning of the file
 
 #### 2. Moving to an arbitrary line
 
-**Example I:** Move to a line using the line number in normal mode
+**Example III:** Move to a line using the line number in normal mode
 - Hit ESC, type the number of the line, say 14, and then type `G` (i.e.
 SHIFT+g)
 
-**Example II:** Move to a line using the line number in command-line mode
+**Example IV:** Move to a line using the line number in command-line mode
 - Hit ESC, type `:`, then type the number of the line, say 23, hit
 enter/return
 
-**Example III:** Let's make sure we moved to 23rd line by showing the
+**Example V:** Let's make sure we moved to 23rd line by showing the
 line numbers before each line.
 - Hit ESC, type `:set nu` (or equally `:set number`), hit enter/return
 - Type `:set nonu` (or equally `:set nonumber`) and hit enter/return to
@@ -269,7 +269,7 @@ marks (i.e. lowercase letters from a to z). The marks are persistent for
 the files as long as you retain .viminfo file which includes the metadata
 about marks, command-line history, search strings, buffers etc.
 
-**Example I:** Let's set mark "a" on the first comma (,) of the 9<sup>th</sup>
+**Example VI:** Let's set mark "a" on the first comma (,) of the 9<sup>th</sup>
 line in *animals.txt*. After setting "a" mark for this location move to
 the end of the file. Using the mark, return to original location.
 - Hit ESC, type `9G` (navigate to line 9) and move to the
@@ -281,7 +281,7 @@ cursor location.
 - If you type `'a`, this will take you to the beginning of line on which
 mark "a" has been set
 
-**Example II:** Set mark "c" on the second comma (,) of the 20<sup>th</sup>
+**Example VII:** Set mark "c" on the second comma (,) of the 20<sup>th</sup>
 in *animals.txt*.
 - Hit ESC, type `20G` (navigate to line 20) and move to the
 second comma by hitting `l` key (or right arrow key)
@@ -289,7 +289,7 @@ second comma by hitting `l` key (or right arrow key)
 cursor location.
 
 
-**Example III:** Now we have to marks "a" and "c", it will be useful to
+**Example VIII:** Now we have to marks "a" and "c", it will be useful to
 know how to review current marks.
 - Hit ESC, type `:` to switch to command-line mode
 - Type `marks` while in command-line mode and hit enter/return. This will
@@ -301,7 +301,7 @@ Another strong suite of Vim lies in its pattern search functionality. It
 is possible to search just for just a pattern, multiple patterns,
 whole words, patterns that are in specific order, duplicate words etc.
 
-**Example I:** Find the first *bear* pattern in *animals.txt* file
+**Example IX:** Find the first *bear* pattern in *animals.txt* file
 from the normal mode.
 - Hit ESC to switch to normal mode then type `/bear` and hit enter/return
 
@@ -310,21 +310,21 @@ Forward slash, `/`, is used to search the trailing pattern, in this case
 the cursor's current location and move the cursor to the beginning of
 the pattern
 
-**Example II:** Find the next *bear* pattern in *animals.txt*
+**Example X:** Find the next *bear* pattern in *animals.txt*
 file from the normal mode.
 - Hit ESC to switch to normal mode then hit `n`
 
 Each time you hit `n` the next matching pattern will be found and the
 cursor will move to that location
 
-**Example III:** Find the previous *bear* pattern in *animals.txt*
+**Example XI:** Find the previous *bear* pattern in *animals.txt*
 file from the normal mode.
 - Hit ESC to switch to normal mode then hit `N` (i.e. SHIFT+n)
 
 Each time you hit `N` the previous matching pattern will be found and
 the cursor will move to that location
 
-**Example IV:** Find the pattern *badger* only if it is a whole word
+**Example XII:** Find the pattern *badger* only if it is a whole word
 in *animals.txt* file from the normal mode.
 - Hit ESC to switch to normal mode
 - Type `/` first before the pattern to be searched
@@ -336,7 +336,7 @@ using `/badger` will not be useful as it will find any pattern containing
 `\<pattern\>` where `\<` represents the beginning of a word, and
 `\>` represents the end of the word.
 
-**Example V:** Find the next line containing *bear* pattern in
+**Example XIII:** Find the next line containing *bear* pattern in
 *animals.txt* file from the command-line mode.
 - Hit ESC and type `:` to go to command-line mode
 - Type `/bear` and hit enter/return
@@ -354,7 +354,7 @@ for substitute). The general format of a substitute is `s/foo/bar` where
 *foo* is the pattern to be substituted by *bar*.
 <p>
 
-**Example I:** Replace the first instance of "rabbit" with "squirrel"
+**Example XIV:** Replace the first instance of "rabbit" with "squirrel"
 in the 2<sup>th</sup> line of *animals.txt* using substitute. Save and exit.
 - First let's create a backup file i.e. *animals_bckp.txt*
 for *animals.txt*, then open *animals.txt* using vim from the terminal.
@@ -379,7 +379,7 @@ and hit enter/return
 accomplish the same task
 <p>
 
-**Example II:** Replace the first instance of "rabbit" with "squirrel"
+**Example XV:** Replace the first instance of "rabbit" with "squirrel"
 in all the lines of *animals.txt* using substitute. Save and exit.
 
 - Open *animals.txt* using vim from the terminal
@@ -394,7 +394,7 @@ vim animals.txt
 considered for substitution.
 <p>
 
-**Example III:** Replace all instances of "fox" with "wolf"
+**Example XVI:** Replace all instances of "fox" with "wolf"
 in all the lines of *animals.txt* using substitute. Save and exit.
 
 - Open *animals.txt* using vim from the terminal
@@ -409,7 +409,7 @@ Here `g` is short for global and it is used to replace all instances of
 the pattern in a line.
 <p>
 
-**Example IV:** Replace all instances of "wolf" with "fox" from line 20
+**Example XVII:** Replace all instances of "wolf" with "fox" from line 20
  to 30 in *animals.txt* using substitute. Save and exit.
 
 - Open *animals.txt* using vim from the terminal
@@ -424,7 +424,7 @@ vim animals.txt
 considered for substitution and it is inclusive.
 <p>
 
-**Example V:** Replace all instances of "badger" with "Tasmanian devil"
+**Example XVIII:** Replace all instances of "badger" with "Tasmanian devil"
 in all the line of *animals.txt* using substitute but require
 confirmation before the change. Save and exit. Make
 sure not to substitute honeybadger.
@@ -441,7 +441,7 @@ vim animals.txt
 `c` at the end is used for confirmation request.
 <p>
 
-**Example VI:** Replace all instances of "Tasmanian devil" with "badger"
+**Example XIX:** Replace all instances of "Tasmanian devil" with "badger"
 in all the line of *animals.txt* using substitute. Make the search case
 insensitive. Save and exit.
 
