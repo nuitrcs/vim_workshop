@@ -233,10 +233,10 @@ search methods in vim. For these exercises we will use *animals.txt*.
 
 #### 1. Moving to start and end of the file
 
-**Example I:** Move to start/end of the in command mode
-- Switch to command mode by hitting ESC. Type `G` to move to the last
+**Example I:** Move to start/end of the in normal mode
+- Switch to normal mode by hitting ESC. Type `G` to move to the last
 line of the file
-- Switch to command mode by hitting ESC. Type `gg` to move to the first
+- Switch to normal mode by hitting ESC. Type `gg` to move to the first
 line of the file
 
 **Example II:** Move to start/end of the file in command-line mode
@@ -247,7 +247,7 @@ enter/return to move to the beginning of the file
 
 #### 2. Moving to an arbitrary line
 
-**Example I:** Move to a line using the line number in command mode
+**Example I:** Move to a line using the line number in normal mode
 - Hit ESC, type the number of the line, say 14, and then type `G` (i.e.
 SHIFT+g)
 
@@ -274,7 +274,7 @@ line in *animals.txt*. After setting "a" mark for this location move to
 the end of the file. Using the mark, return to original location.
 - Hit ESC, type `9G` (navigate to line 9) and move to the
 first comma by hitting `l` key (or right arrow key)
-- Type `ma` (while on the command mode) to set the mark "a" to the
+- Type `ma` (while on the normal mode) to set the mark "a" to the
 cursor location.
 - Type `G` to move to the last line of the file
 - Type `` `a `` to move back to the mark's position
@@ -285,7 +285,7 @@ mark "a" has been set
 in *animals.txt*.
 - Hit ESC, type `20G` (navigate to line 20) and move to the
 second comma by hitting `l` key (or right arrow key)
-- Type `mc` (while on the command mode) to set the mark "c" to the
+- Type `mc` (while on the normal mode) to set the mark "c" to the
 cursor location.
 
 
@@ -302,8 +302,8 @@ is possible to search just for just a pattern, multiple patterns,
 whole words, patterns that are in specific order, duplicate words etc.
 
 **Example I:** Find the first *bear* pattern in *animals.txt* file
-from the command mode.
-- Hit ESC to switch to command mode then type `/bear` and hit enter/return
+from the normal mode.
+- Hit ESC to switch to normal mode then type `/bear` and hit enter/return
 
 Forward slash, `/`, is used to search the trailing pattern, in this case
 "bear". Consequently, `/bear` will find the first matching pattern after
@@ -311,22 +311,22 @@ the cursor's current location and move the cursor to the beginning of
 the pattern
 
 **Example II:** Find the next *bear* pattern in *animals.txt*
-file from the command mode.
-- Hit ESC to switch to command mode then hit `n`
+file from the normal mode.
+- Hit ESC to switch to normal mode then hit `n`
 
 Each time you hit `n` the next matching pattern will be found and the
 cursor will move to that location
 
 **Example III:** Find the previous *bear* pattern in *animals.txt*
-file from the command mode.
-- Hit ESC to switch to command mode then hit `N` (i.e. SHIFT+n)
+file from the normal mode.
+- Hit ESC to switch to normal mode then hit `N` (i.e. SHIFT+n)
 
 Each time you hit `N` the previous matching pattern will be found and
 the cursor will move to that location
 
 **Example IV:** Find the pattern *badger* only if it is a whole word
-in *animals.txt* file from the command mode.
-- Hit ESC to switch to command mode
+in *animals.txt* file from the normal mode.
+- Hit ESC to switch to normal mode
 - Type `/` first before the pattern to be searched
 - Type `\<badger\>` and hit ENTER/RETURN
 
@@ -403,7 +403,7 @@ vim animals.txt
 ```
 - Hit ESC and type `:` go to command-line mode
 - Write `%s/rabbit/squirrel/g` and hit enter/return
-- Hit ESC to switch to command mode and `ZZ`
+- Hit ESC to switch to normal mode and `ZZ`
 
 Here `g` is short for global and it is used to replace all instances of
 the pattern in a line.
@@ -418,7 +418,7 @@ vim animals.txt
 ```
 - Hit ESC and type `:` go to command-line mode
 - Write `20,30s/rabbit/squirrel/g` and hit enter/return
-- Hit ESC to switch to command mode and type `ZZ`
+- Hit ESC to switch to normal mode and type `ZZ`
 
 `20,30` before `s/rabbit/squirrel/g` indicates the range of lines to be
 considered for substitution and it is inclusive.
@@ -435,7 +435,7 @@ vim animals.txt
 ```
 - Hit ESC and type `:` go to command-line mode
 - Write `%s/\<badger\>/Tasmanian devil/gc` and hit enter/return
-- Hit ESC to switch to command mode and type `ZZ`
+- Hit ESC to switch to normal mode and type `ZZ`
 
 `\<badger\>` searchers for only the whole words exactly matching badger.
 `c` at the end is used for confirmation request.
@@ -451,7 +451,7 @@ vim animals.txt
 ```
 - Hit ESC and type `:` go to command-line mode
 - Write `%s/tasmanian devil/badger/gi` and hit enter/return
-- Hit ESC to switch to command mode and type `ZZ`
+- Hit ESC to switch to normal mode and type `ZZ`
 
 `i` at the end is used to make the search case insensitive.
 
@@ -497,7 +497,7 @@ vim operations.vim
 - Switch to insert mode by hitting `i`
 - Type `:%s/bear/giraffe/g` on the first line of *operations.vim*
 - Type `ZZ` on the second line of the *operations.vim*
-- Switch to command mode by hitting ESC and save&quit by hitting `ZZ`
+- Switch to normal mode by hitting ESC and save&quit by hitting `ZZ`
 - Run the command below in the terminal:
 ```bash
 vim animals.txt -s operations.vim
@@ -551,7 +551,7 @@ vim -O animals.txt
 - Type `split editing.txt`
 - Switch to command-line mode by typing `:`
 - Type `vsplit introduction.txt`
-- Switch to command mode by hitting ESC
+- Switch to normal mode by hitting ESC
 - While holding CTRL hit `w` twice (i.e. CTRL+w+w) which will move the
 cursor to the next pane
 
