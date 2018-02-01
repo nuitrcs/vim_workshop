@@ -71,5 +71,14 @@ Example IX
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Example X
 
+    This is Sentence 3.
+    This is Sentence 1.
+    This is Sentence 2.
+
+--> Order the sentences 1-3 in correct order.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Example XI
+
     There are some mistakes in this sentence.
 --> There are somee mistakess in this sentence.

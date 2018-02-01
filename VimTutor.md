@@ -133,7 +133,7 @@ normal mode by hitting `ESC`.
 
 In addition to those mentioned above, command `dd` can be used to delete
  a whole line. Note here to delete multiple lines with count, use `3dd`,
-  rather than `d3d`.
+ rather than `d3d`.
 
 **Example V:** Delete all lines marked by -->
 
@@ -194,7 +194,7 @@ content and hit `ESC` to switch back to normal mode.
 
 Command `v` is used to select text visually. After hit `v`, you will be
 switched to visual mode, and by moving cursor you can change the range
-of text being selected. The visually selected text can be copied use
+of text being selected. The visually selected text can be copied use yank
 command `y` and pasted with command `p`.
 
 **Example IX:** Complete the text lines marked by -->.
@@ -209,21 +209,33 @@ mode.
 - Navigate to the position you want to paste, hit `p`.
 
 Command `y` can be also used similarly as `d` or `c` by combining it
-with motion. E.g., you can use `y$` in the example above.
+with motion like `w` and `$`. E.g., you can use `y$` in the example above. You can also use `yy` to copy an entire line.
 
-### 6. Undo command
+### 6. Named Buffer
+
+When you use deletion command `d` or yank command `y`, the text is saved in a **buffer**. In order to work with multiple buffers, names from "a" to "z" can be assigned to buffers. E.g., command `"ayy` will assign name "a" to the line you just copy.
+
+**Example X:** Order the sentences 1-3 in correct order.
+
+- Open *editing.txt* and navigate to Example X. Make sure you are in
+normal mode by hitting `ESC`.
+- Move cursor to first line (Sentence 3), and hit `"ayy`.
+- Move cursor to second line (Sentence 1), and hit `"byy`.
+- Move cursor to third line (Sentence 2), and hit `"cyy`.
+- Now move the empty space below. First hit `"bp` to recover Sentence 1, then hit `"cp` to recover Sentence 2, and finally, hit  `"ap` to recover Sentence 1. 
+
+### 7. Undo command
 
 To undo your last command, use command `u`.
 
-**Example X:** Correct the text lines marked by -->, then undo the
+**Example XI:** Correct the text lines marked by -->, then undo the
 correction.
-- Open *editing.txt* and navigate to Example X. Make sure you are in
+
+- Open *editing.txt* and navigate to Example XI. Make sure you are in
 normal mode by hitting `ESC`.
 - Use command `x` to correct the line marked by -->.
 - Now hit `u`, it will undo your last deletion. Hit `u` again, it will
 redo your second last deletion.
-
-### 7. Named buffers
 
 --------------
 
