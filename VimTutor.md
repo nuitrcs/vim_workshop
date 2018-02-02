@@ -353,10 +353,7 @@ using `/badger` will not be useful as it will find any pattern containing
 - Hit ESC and type `:` to go to command-line mode
 - Type `/bear` and hit enter/return
 
-#### 5.  .
-   To search for the same phrase in the opposite direction, type  N .
-
-#### 6. Text substitution (or find&replace)
+#### 5. Text Substitution
 Many modern document and text editors provide functionality for finding
 and replacing strings. Vim is no exception and it offers many additional
 features.
@@ -467,6 +464,29 @@ vim animals.txt
 
 `i` at the end is used to make the search case insensitive.
 
+#### 6. Global Operations
+The global command,`:g`, is used to execute an operation throughout
+the document.
+
+**Example XX:** Delete all the lines having the pattern "goat" from
+*animals.txt*. After completing the task, undo the change.
+- Hit ESC and type `:` go to command-line mode
+- Write `g/goat/d` and hit <ENTER/RETURN>. Can you find any lines with
+"goat" pattern?
+- Hit <ESC> then `u` to undo the deletion.
+The `d` in `g/goat/d` indicates a deletion operation. Thus the whole
+command means do the deletion for all lines that have "goat" pattern.
+
+**Example XXI:** Delete all the lines that do not have the pattern
+"goat" from *animals.txt*. After completing the task, undo the change.
+- Hit ESC and type `:` go to command-line mode
+- Write `g!/goat/d` and hit <ENTER/RETURN>. Can you find any lines
+without "goat" pattern?
+- Hit <ESC> then `u` to undo the deletion.
+The exclamation mark, `!`, in `g!/goat/d` refers to **not**. Thus the whole
+command means do the deletion for all lines that do not have "goat" pattern.
+
+
 --------------
 # More on Editing Text From Bash Shell (no UI)
 
@@ -476,8 +496,7 @@ tasks will become inefficient. Furthermore if you are submitting
 a workflow for batch processing, UI is impractical.
 
 For such tasks, Vim can be used from your bash command line. It is
-possible to pass command and command-line mode directives to Vim from
-terminal.
+possible to pass directives to Vim from terminal.
 <p>
 
 **Example I:** Replace all instances of "wolf" with "fox"
@@ -494,7 +513,6 @@ to substitute all instances of "wolf" with "fox" in *animals.txt* and
 save&quit the file respectively when in command-line mode. The flag "-c"
 executes the following command as if the vim is operating in command-line
 mode.
-
 <p>
 
 **Example II:** Prepare a vim script (say *operations.vim*) that includes
@@ -517,15 +535,6 @@ vim animals.txt -s operations.vim
 
 The flag "-s" reads normal mode commands from a script file and applies
 them to the input file
-
-# Running shell commands from inside the vim
-
-:! <command> --> runs the command
-:!! --> repeats the last command
-:silent !<command? --> eliminates the need to hit enter after the command is done
-:r !<command>  --> push the output of command into the current buffer
-:%!<command> -->to pass the current buffer from a command (:%!tac or :%!nl)
-:3,$! sort -u --> send line range (3 to EOF) as buffer to command
 
 # Using split windows for different files in Vim
 It is possible to open multiple files spreading horizontally or
@@ -567,7 +576,56 @@ vim -O animals.txt
 - While holding CTRL hit `w` twice (i.e. CTRL+w+w) which will move the
 cursor to the next pane
 
-https://codeincomplete.com/posts/split-windows-and-tabs-in-vim/
+# Running shell commands from inside the vim
+While you are working on your text file with Vim, you may realize that
+you need some information from your system. Assuming the system is UNIX
+based, you can execute, say, bash commands and obtain the necessary
+information using the Vim command-line mode.
+
+**Example I:** Open *animals.txt* with Vim and without quitting explore
+the current contests of the folder.
+- Issue the following command on your terminal
+```bash
+vim animals.txt
+```
+- Switch to command-line mode by typing `:`
+- Type `!ls` and hit <ENTER/RETURN>
+- Hit <ENTER/RETURN> again to continue Vim
+The general format to issue a system command inside the Vim interface is
+typing `:!<command>`.
+Note: `:!!` repeats the last command issued
+
+**Example II:** Open Vim interface and export the current contents of the
+folder to this empty document. Save the document as *folder_contents.txt*.
+- Issue the following command on your terminal
+```bash
+vim
+```
+- Switch to command-line mode by typing `:`
+- Type `r !ls` and hit <ENTER/RETURN>
+- Hit <ENTER/RETURN> again to continue Vim
+- Switch to command-line mode by typing `:` and type `w folder_contents.txt`
+`r` in `r !ls` is short for read which reads and inputs the result of the
+following expression (in this case `!ls`) in the current buffer below the
+cursor.
+
+**Example III:** Open *animals.txt* with Vim and
+- Issue the following command on your terminal
+```bash
+vim
+```
+- Switch to command-line mode by typing `:`
+- Type `r !ls` and hit <ENTER/RETURN>
+- Hit <ENTER/RETURN> again to continue Vim
+- Switch to command-line mode by typing `:` and type `w folder_contents.txt`
+The general format to issue a system command inside the Vim interface is
+typing `:!<command>`.
+
+
+:! % --> % is a special character for the currently open file
+:%!<command> -->to pass the current buffer from a command (:%!tac or :%!nl)
+:3,$! sort -u --> send line range (3 to EOF) as buffer to command
+
 
 # Additional Resources
 
