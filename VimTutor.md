@@ -28,7 +28,7 @@ and gedit in Linux. Here is a short overview of each mode available
 in vim:
 
 - Normal mode: For navigation and manipulation of text. This is the
-default mode when you start Vim. Press `<ESC>` to exit back to normal
+default mode when you start Vim. Press `ESC` to exit back to normal
 mode from other modes.
 - Insert mode: For inserting new text. Insert mode can be reached in
 several ways, e.g., pressing `i` when in normal mode.
@@ -79,10 +79,10 @@ You can also try them in Example II.
 
 **Example III:** Quit with/without saving in Vim
 
-- In the opened *introduction.txt*, type `:q!` and hit `ENTER` to exit
+- In the opened *introduction.txt*, type `:q!` and hit `ENTER/RETURN` to exit
 WITHOUT saving the changes.
 - Reopen *introduction.txt*, insert some text with commands `o` or `a`.
-Type `:wq` and hit `ENTER` to exit WITH saving the changes.
+Type `:wq` and hit `ENTER/RETURN` to exit WITH saving the changes.
 
 --------------
 
@@ -246,31 +246,31 @@ search methods in vim. For these exercises we will use *animals.txt*.
 #### 1. Moving to start and end of the file
 
 **Example I:** Move to start/end of the in normal mode
-- Switch to normal mode by hitting ESC. Type `G` to move to the last
+- Switch to normal mode by hitting `ESC`. Type `G` to move to the last
 line of the file
-- Switch to normal mode by hitting ESC. Type `gg` to move to the first
+- Switch to normal mode by hitting `ESC`. Type `gg` to move to the first
 line of the file
 
 **Example II:** Move to start/end of the file in command-line mode
-- Switch to command-line mode by hitting ESC and then typing `:`. Type
-`$` and hit enter/return to move to the last line of the file
-- Hit ESC then type `:` to switch to command-line mode. Type `0` and hit
-enter/return to move to the beginning of the file
+- Switch to command-line mode by hitting `ESC` and then typing `:`. Type
+`$` and hit `ENTER/RETURN` to move to the last line of the file
+- Hit `ESC` then type `:` to switch to command-line mode. Type `0` and hit
+`ENTER/RETURN` to move to the beginning of the file
 
 #### 2. Moving to an arbitrary line
 
 **Example III:** Move to a line using the line number in normal mode
-- Hit ESC, type the number of the line, say 14, and then type `G` (i.e.
-SHIFT+g)
+- Hit `ESC`, type the number of the line, say 14, and then type `G` (i.e.
+`SHIFT+g`)
 
 **Example IV:** Move to a line using the line number in command-line mode
-- Hit ESC, type `:`, then type the number of the line, say 23, hit
-enter/return
+- Hit `ESC`, type `:`, then type the number of the line, say 23, hit
+`ENTER/RETURN`
 
 **Example V:** Let's make sure we moved to 23rd line by showing the
 line numbers before each line.
-- Hit ESC, type `:set nu` (or equally `:set number`), hit enter/return
-- Type `:set nonu` (or equally `:set nonumber`) and hit enter/return to
+- Hit `ESC`, type `:set nu` (or equally `:set number`), hit `ENTER/RETURN`
+- Type `:set nonu` (or equally `:set nonumber`) and hit `ENTER/RETURN` to
 hide the line numbers
 
 #### 3. Using Marks
@@ -284,7 +284,7 @@ about marks, command-line history, search strings, buffers etc.
 **Example VI:** Let's set mark "a" on the first comma (,) of the 9<sup>th</sup>
 line in *animals.txt*. After setting "a" mark for this location move to
 the end of the file. Using the mark, return to original location.
-- Hit ESC, type `9G` (navigate to line 9) and move to the
+- Hit `ESC`, type `9G` (navigate to line 9) and move to the
 first comma by hitting `l` key (or right arrow key)
 - Type `ma` (while on the normal mode) to set the mark "a" to the
 cursor location.
@@ -295,7 +295,7 @@ mark "a" has been set
 
 **Example VII:** Set mark "c" on the second comma (,) of the 20<sup>th</sup>
 in *animals.txt*.
-- Hit ESC, type `20G` (navigate to line 20) and move to the
+- Hit `ESC`, type `20G` (navigate to line 20) and move to the
 second comma by hitting `l` key (or right arrow key)
 - Type `mc` (while on the normal mode) to set the mark "c" to the
 cursor location.
@@ -303,8 +303,8 @@ cursor location.
 
 **Example VIII:** Now we have to marks "a" and "c", it will be useful to
 know how to review current marks.
-- Hit ESC, type `:` to switch to command-line mode
-- Type `marks` while in command-line mode and hit enter/return. This will
+- Hit `ESC`, type `:` to switch to command-line mode
+- Type `marks` while in command-line mode and hit `ENTER/RETURN`. This will
 list all the default and user defined marks.
 
 
@@ -315,7 +315,7 @@ whole words, patterns that are in specific order, duplicate words etc.
 
 **Example IX:** Find the first *bear* pattern in *animals.txt* file
 from the normal mode.
-- Hit ESC to switch to normal mode then type `/bear` and hit enter/return
+- Hit `ESC` to switch to normal mode then type `/bear` and hit `ENTER/RETURN`
 
 Forward slash, `/`, is used to search the trailing pattern, in this case
 "bear". Consequently, `/bear` will find the first matching pattern after
@@ -324,23 +324,23 @@ the pattern
 
 **Example X:** Find the next *bear* pattern in *animals.txt*
 file from the normal mode.
-- Hit ESC to switch to normal mode then hit `n`
+- Hit `ESC` to switch to normal mode then hit `n`
 
 Each time you hit `n` the next matching pattern will be found and the
 cursor will move to that location
 
 **Example XI:** Find the previous *bear* pattern in *animals.txt*
 file from the normal mode.
-- Hit ESC to switch to normal mode then hit `N` (i.e. SHIFT+n)
+- Hit `ESC` to switch to normal mode then hit `N` (i.e. `SHIFT+n`)
 
 Each time you hit `N` the previous matching pattern will be found and
 the cursor will move to that location
 
 **Example XII:** Find the pattern *badger* only if it is a whole word
 in *animals.txt* file from the normal mode.
-- Hit ESC to switch to normal mode
+- Hit `ESC` to switch to normal mode
 - Type `/` first before the pattern to be searched
-- Type `\<badger\>` and hit ENTER/RETURN
+- Type `\<badger\>` and hit `ENTER/RETURN`
 
 Since we are looking for a whole word, a simply searching for "badger"
 using `/badger` will not be useful as it will find any pattern containing
@@ -350,8 +350,8 @@ using `/badger` will not be useful as it will find any pattern containing
 
 **Example XIII:** Find the next line containing *bear* pattern in
 *animals.txt* file from the command-line mode.
-- Hit ESC and type `:` to go to command-line mode
-- Type `/bear` and hit enter/return
+- Hit `ESC` and type `:` to go to command-line mode
+- Type `/bear` and hit `ENTER/RETURN`
 
 #### 5. Text Substitution
 Many modern document and text editors provide functionality for finding
@@ -374,8 +374,8 @@ vim animals.txt
 - Hit `ESC` and go to command-line mode with typing ":"
 - Type `2` to go to the second line
 - Type `:` to start the command-line mode and write `s/rabbit/squirrel`
-and hit enter/return
-- Type `:` to start the command-line then type `wq` and hit enter/return
+and hit `ENTER/RETURN`
+- Type `:` to start the command-line then type `wq` and hit `ENTER/RETURN`
 
 On the command-line mode we issued two distinct directives, `s/rabbit/squirrel`
 and `wq`. Instead of doing the substitution and write&quit in two steps
@@ -383,8 +383,8 @@ we could have stack the commands using the pipe sign `|` which acts as
 an "and".
 
 - Type `:` to start the command-line mode and write `s/rabbit/squirrel | wq`
-and hit enter/return
-- Typing `:s/rabbit/squirrel | w | q` and hitting enter/return will
+and hit `ENTER/RETURN`
+- Typing `:s/rabbit/squirrel | w | q` and hitting `ENTER/RETURN` will
 accomplish the same task
 <p>
 
@@ -396,8 +396,8 @@ in all the lines of *animals.txt* using substitute. Save and exit.
 vim animals.txt
 ```
 - Hit `ESC` and type `:` go to command-line mode
-- Write `%s/rabbit/squirrel` and hit enter/return
-- Type `:` to start the command-line then type `x` and hit enter/return
+- Write `%s/rabbit/squirrel` and hit `ENTER/RETURN`
+- Type `:` to start the command-line then type `x` and hit `ENTER/RETURN`
 
 `%` indicates that whole buffer (practically whole document) will be
 considered for substitution.
@@ -410,9 +410,9 @@ in all the lines of *animals.txt* using substitute. Save and exit.
 ```bash
 vim animals.txt
 ```
-- Hit ESC and type `:` go to command-line mode
-- Write `%s/rabbit/squirrel/g` and hit enter/return
-- Hit ESC to switch to normal mode and `ZZ`
+- Hit `ESC` and type `:` go to command-line mode
+- Write `%s/rabbit/squirrel/g` and hit `ENTER/RETURN`
+- Hit `ESC` to switch to normal mode and `ZZ`
 
 Here `g` is short for global and it is used to replace all instances of
 the pattern in a line.
@@ -425,9 +425,9 @@ the pattern in a line.
 ```bash
 vim animals.txt
 ```
-- Hit ESC and type `:` go to command-line mode
-- Write `20,30s/rabbit/squirrel/g` and hit enter/return
-- Hit ESC to switch to normal mode and type `ZZ`
+- Hit `ESC` and type `:` go to command-line mode
+- Write `20,30s/rabbit/squirrel/g` and hit `ENTER/RETURN`
+- Hit `ESC` to switch to normal mode and type `ZZ`
 
 `20,30` before `s/rabbit/squirrel/g` indicates the range of lines to be
 considered for substitution and it is inclusive.
@@ -442,9 +442,9 @@ sure not to substitute honeybadger.
 ```bash
 vim animals.txt
 ```
-- Hit ESC and type `:` go to command-line mode
-- Write `%s/\<badger\>/Tasmanian devil/gc` and hit enter/return
-- Hit ESC to switch to normal mode and type `ZZ`
+- Hit `ESC` and type `:` go to command-line mode
+- Write `%s/\<badger\>/Tasmanian devil/gc` and hit `ENTER/RETURN`
+- Hit `ESC` to switch to normal mode and type `ZZ`
 
 `\<badger\>` searchers for only the whole words exactly matching badger.
 `c` at the end is used for confirmation request.
@@ -458,9 +458,9 @@ insensitive. Save and exit.
 ```bash
 vim animals.txt
 ```
-- Hit ESC and type `:` go to command-line mode
-- Write `%s/tasmanian devil/badger/gi` and hit enter/return
-- Hit ESC to switch to normal mode and type `ZZ`
+- Hit `ESC` and type `:` go to command-line mode
+- Write `%s/tasmanian devil/badger/gi` and hit `ENTER/RETURN`
+- Hit `ESC` to switch to normal mode and type `ZZ` (i.e. `SHIFT+z+z`)
 
 `i` at the end is used to make the search case insensitive.
 
@@ -470,19 +470,19 @@ the document.
 
 **Example XX:** Delete all the lines having the pattern "goat" from
 *animals.txt*. After completing the task, undo the change.
-- Hit ESC and type `:` go to command-line mode
-- Write `g/goat/d` and hit <ENTER/RETURN>. Can you find any lines with
+- Hit `ESC` and type `:` go to command-line mode
+- Write `g/goat/d` and hit `ENTER/RETURN`. Can you find any lines with
 "goat" pattern?
-- Hit <ESC> then `u` to undo the deletion.
+- Hit `ESC` then `u` to undo the deletion.
 The `d` in `g/goat/d` indicates a deletion operation. Thus the whole
 command means do the deletion for all lines that have "goat" pattern.
 
 **Example XXI:** Delete all the lines that do not have the pattern
 "goat" from *animals.txt*. After completing the task, undo the change.
-- Hit ESC and type `:` go to command-line mode
-- Write `g!/goat/d` and hit <ENTER/RETURN>. Can you find any lines
+- Hit `ESC` and type `:` go to command-line mode
+- Write `g!/goat/d` and hit `ENTER/RETURN`. Can you find any lines
 without "goat" pattern?
-- Hit <ESC> then `u` to undo the deletion.
+- Hit `ESC` then `u` to undo the deletion.
 The exclamation mark, `!`, in `g!/goat/d` refers to **not**. Thus the whole
 command means do the deletion for all lines that do not have "goat" pattern.
 
@@ -527,7 +527,7 @@ vim operations.vim
 - Switch to insert mode by hitting `i`
 - Type `:%s/bear/giraffe/g` on the first line of *operations.vim*
 - Type `ZZ` on the second line of the *operations.vim*
-- Switch to normal mode by hitting ESC and save&quit by hitting `ZZ`
+- Switch to normal mode by hitting `ESC` and save&quit by hitting `ZZ`
 - Run the command below in the terminal:
 ```bash
 vim animals.txt -s operations.vim
@@ -549,7 +549,7 @@ vim -o animals.txt editing.txt
 ```
 - Once the split windows are opened switch to command-line mode by
 typing `:`
-- Type `q!` and hit ENTER/RETURN
+- Type `q!` and hit `ENTER/RETURN`
 
 **Example II:** Open the two files *animals.txt* and *editing.txt* in a
 split windows oriented vertically, then quit all without saving.
@@ -559,7 +559,7 @@ vim -O animals.txt editing.txt
 ```
 - Once the split windows are opened switch to command-line mode by
 typing `:`
-- Type `q!` and hit ENTER/RETURN
+- Type `q!` and hit `ENTER/RETURN`
 
 **Example III** Open the *animals.txt* first then open *editing.txt* by
 splitting the window horizontally. Finally open *introduction.txt* in a
@@ -572,7 +572,7 @@ vim -O animals.txt
 - Type `split editing.txt`
 - Switch to command-line mode by typing `:`
 - Type `vsplit introduction.txt`
-- Switch to normal mode by hitting ESC
+- Switch to normal mode by hitting `ESC`
 - While holding CTRL hit `w` twice (i.e. CTRL+w+w) which will move the
 cursor to the next pane
 
@@ -589,8 +589,8 @@ the current contests of the folder.
 vim animals.txt
 ```
 - Switch to command-line mode by typing `:`
-- Type `!ls` and hit <ENTER/RETURN>
-- Hit <ENTER/RETURN> again to continue Vim
+- Type `!ls` and hit `ENTER/RETURN`
+- Hit `ENTER/RETURN` again to continue Vim
 The general format to issue a system command inside the Vim interface is
 typing `:!<command>`.
 Note: `:!!` repeats the last command issued
@@ -602,8 +602,8 @@ folder to this empty document. Save the document as *folder_contents.txt*.
 vim
 ```
 - Switch to command-line mode by typing `:`
-- Type `r !ls` and hit <ENTER/RETURN>
-- Hit <ENTER/RETURN> again to continue Vim
+- Type `r !ls` and hit `ENTER/RETURN`
+- Hit `ENTER/RETURN` again to continue Vim
 - Switch to command-line mode by typing `:` and type `w folder_contents.txt`
 `r` in `r !ls` is short for read which reads and inputs the result of the
 following expression (in this case `!ls`) in the current buffer below the
@@ -618,9 +618,9 @@ reverse
 vim *animals.txt*
 ```
 - Switch to command-line mode by typing `:`
-- Type `% !tac` and hit <ENTER/RETURN>
+- Type `% !tac` and hit `ENTER/RETURN`
 - Switch to normal mode by hitting `ESC`
-- Type `ZZ` (i.e. SHIFT+z+z)
+- Type `ZZ` (i.e. `SHIFT+z+z`)
 `%` in `% !tac` defines the range from the beginning to the end of the
 buffer (practically the file). `!tac` is the UNIX command issued from
 vim interface that reversed the buffer.
@@ -631,10 +631,10 @@ HINT: `tac` (i.e. the reverse of `cat`) concatenates and writes files in
 reverse
 - Issue the following command on your terminal
 ```bash
-vim *animals.txt*
+vim animals.txt
 ```
 - Switch to command-line mode by typing `:`
-- Type `10,$ !tac` and hit <ENTER/RETURN>
+- Type `10,$ !tac` and hit `ENTER/RETURN`
 - Switch to normal mode by hitting `ESC` and then `u`
 - Type `:q!` to quit without saving
 
@@ -643,7 +643,7 @@ sleep from 10 seconds to 4 seconds, save the file and run it without
 quitting Vim.
 - Issue the following command on your terminal
 ```bash
-vim *helloworld.py*
+vim helloworld.py
 ```
 - Move the cursor to line including "sleep(10)"
 - Hit `ESC` to switch to the normal mode
@@ -651,21 +651,21 @@ vim *helloworld.py*
 1, then hitting `r` and '4' sequentially.
 - Move the cursor over "0" in "sleep(40)" and hit `x` to delete "0".
 - Type `:` to switch to command-line mode
-- Type `w` and hit ENTER/RETURN to save the file
+- Type `w` and hit `ENTER/RETURN` to save the file
 - Type `:` to switch to command-line mode again
-- Type `!python %` and hit ENTER/RETURN to run the script
-- Hit ENTER/RETURN when the run is finished (you will be prompted) which
+- Type `!python %` and hit `ENTER/RETURN` to run the script
+- Hit `ENTER/RETURN` when the run is finished (you will be prompted) which
 will return the screen to Vim interface.
 
 # Need More Help?
-Any moment during your Vim session hit ESC, type `:help` and hit ENTER/RETURN.
+Any moment during your Vim session hit `ESC`, type `:help` and hit `ENTER/RETURN`.
 To quit from help page type `:q!`.
 
 You can also specify the help topic by identifying the command that you
-want to learn. During your Vim session, hit ESC, type `:help :<command>`
-and hit ENTER/RETURN. For instance, if you would like to see more
+want to learn. During your Vim session, hit `ESC`, type `:help :<command>`
+and hit `ENTER/RETURN`. For instance, if you would like to see more
 information about `substitute` you should write `:help :s` and hit
-ENTER/RETURN.
+`ENTER/RETURN`.
 
 # Additional Resources
 
