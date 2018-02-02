@@ -371,7 +371,7 @@ for *animals.txt*, then open *animals.txt* using vim from the terminal.
 cp animals.txt animals_bckp.txt
 vim animals.txt
 ```
-- Hit ESC and go to command-line mode with typing ":"
+- Hit `ESC` and go to command-line mode with typing ":"
 - Type `2` to go to the second line
 - Type `:` to start the command-line mode and write `s/rabbit/squirrel`
 and hit enter/return
@@ -395,7 +395,7 @@ in all the lines of *animals.txt* using substitute. Save and exit.
 ```bash
 vim animals.txt
 ```
-- Hit ESC and type `:` go to command-line mode
+- Hit `ESC` and type `:` go to command-line mode
 - Write `%s/rabbit/squirrel` and hit enter/return
 - Type `:` to start the command-line then type `x` and hit enter/return
 
@@ -609,23 +609,63 @@ vim
 following expression (in this case `!ls`) in the current buffer below the
 cursor.
 
-**Example III:** Open *animals.txt* with Vim and
+**Example III:** Open *animals.txt* with Vim and revert the whole buffer
+on the screen. Save the file and exit.
+HINT: `tac` (i.e. the reverse of `cat`) concatenates and writes files in
+reverse
 - Issue the following command on your terminal
 ```bash
-vim
+vim *animals.txt*
 ```
 - Switch to command-line mode by typing `:`
-- Type `r !ls` and hit <ENTER/RETURN>
-- Hit <ENTER/RETURN> again to continue Vim
-- Switch to command-line mode by typing `:` and type `w folder_contents.txt`
-The general format to issue a system command inside the Vim interface is
-typing `:!<command>`.
+- Type `% !tac` and hit <ENTER/RETURN>
+- Switch to normal mode by hitting `ESC`
+- Type `ZZ` (i.e. SHIFT+z+z)
+`%` in `% !tac` defines the range from the beginning to the end of the
+buffer (practically the file). `!tac` is the UNIX command issued from
+vim interface that reversed the buffer.
 
+**Example IV:** Open *animals.txt* with Vim and revert the order of lines
+from 10 to the end of file. Undo the change and quit without saving.
+HINT: `tac` (i.e. the reverse of `cat`) concatenates and writes files in
+reverse
+- Issue the following command on your terminal
+```bash
+vim *animals.txt*
+```
+- Switch to command-line mode by typing `:`
+- Type `10,$ !tac` and hit <ENTER/RETURN>
+- Switch to normal mode by hitting `ESC` and then `u`
+- Type `:q!` to quit without saving
 
-:! % --> % is a special character for the currently open file
-:%!<command> -->to pass the current buffer from a command (:%!tac or :%!nl)
-:3,$! sort -u --> send line range (3 to EOF) as buffer to command
+**Example IV:** Open *helloworld.py* with Vim. Change the duration of
+sleep from 10 seconds to 4 seconds, save the file and run it without
+quitting Vim.
+- Issue the following command on your terminal
+```bash
+vim *helloworld.py*
+```
+- Move the cursor to line including "sleep(10)"
+- Hit `ESC` to switch to the normal mode
+- Replace "1" with "4" in "sleep(10)" by first moving the cursor over
+1, then hitting `r` and '4' sequentially.
+- Move the cursor over "0" in "sleep(40)" and hit `x` to delete "0".
+- Type `:` to switch to command-line mode
+- Type `w` and hit ENTER/RETURN to save the file
+- Type `:` to switch to command-line mode again
+- Type `!python %` and hit ENTER/RETURN to run the script
+- Hit ENTER/RETURN when the run is finished (you will be prompted) which
+will return the screen to Vim interface.
 
+# Need More Help?
+Any moment during your Vim session hit ESC, type `:help` and hit ENTER/RETURN.
+To quit from help page type `:q!`.
+
+You can also specify the help topic by identifying the command that you
+want to learn. During your Vim session, hit ESC, type `:help :<command>`
+and hit ENTER/RETURN. For instance, if you would like to see more
+information about `substitute` you should write `:help :s` and hit
+ENTER/RETURN.
 
 # Additional Resources
 
