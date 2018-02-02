@@ -294,7 +294,7 @@ cursor location.
 mark "a" has been set
 
 **Example VII:** Set mark "c" on the second comma (,) of the 20<sup>th</sup>
-in *animals.txt*.
+line in *animals.txt*.
 - Hit `ESC`, type `20G` (navigate to line 20) and move to the
 second comma by hitting `l` key (or right arrow key)
 - Type `mc` (while on the normal mode) to set the mark "c" to the
