@@ -39,20 +39,18 @@ This mode allows you to perform most normal commands, and a few extra
 commands, on selected text. Press `v` when in normal mode to enter
 visual mode.
 
-**Example I:** Navigation in Vim with `hjkl`.
+**Example I:** Navigation in Vim with `h, j, k, l` or arrow keys.
 
 In Vim normal mode, commands `h`, `j`, `k`, `l` are used to move cursor
-left, right, up or down. Arrow keys can also be used to move cursor,
-however, using `hjkl` will allow you to navigate faster once you get
-used to it.
+left, down, up or right. Arrow keys can also be used for the same purpose.
 
 - Open *introduction.txt* using vim from the terminal
 ```bash
 vim introduction.txt
 ```
 - Make sure you are in normal mode by hitting `ESC`.
-- Press `h`, `j`, `k`, `l` to move your cursor around until you feel
-comfortable with that.
+- Press `h`, `j`, `k`, `l` or arrows to move your cursor around until
+you feel comfortable with that.
 
 **Example II:** Insert text in Line 2 of *introduction.txt*.
 
@@ -209,11 +207,15 @@ mode.
 - Navigate to the position you want to paste, hit `p`.
 
 Command `y` can be also used similarly as `d` or `c` by combining it
-with motion like `w` and `$`. E.g., you can use `y$` in the example above. You can also use `yy` to copy an entire line.
+with motion like `w` and `$`. E.g., you can use `y$` in the example above.
+You can also use `yy` to copy an entire line.
 
 ### 6. Named Buffer
 
-When you use deletion command `d` or yank command `y`, the text is saved in a **buffer**. In order to work with multiple buffers, names from "a" to "z" can be assigned to buffers. E.g., command `"ayy` will assign name "a" to the line you just copy.
+When you use deletion command `d` or yank command `y`, the text is saved
+in a **buffer**. In order to work with multiple buffers, names from "a"
+to "z" can be assigned to buffers. E.g., command `"ayy` will assign name
+"a" to the line you just copy.
 
 **Example X:** Order the sentences 1-3 in correct order.
 
@@ -222,7 +224,9 @@ normal mode by hitting `ESC`.
 - Move cursor to first line (Sentence 3), and hit `"ayy`.
 - Move cursor to second line (Sentence 1), and hit `"byy`.
 - Move cursor to third line (Sentence 2), and hit `"cyy`.
-- Now move the empty space below. First hit `"bp` to recover Sentence 1, then hit `"cp` to recover Sentence 2, and finally, hit  `"ap` to recover Sentence 1. 
+- Now move the empty space below. First hit `"bp` to recover Sentence 1,
+then hit `"cp` to recover Sentence 2, and finally, hit  `"ap` to recover
+Sentence 1.
 
 ### 7. Undo command
 
@@ -246,8 +250,8 @@ search methods in vim. For these exercises we will use *animals.txt*.
 #### 1. Moving to start and end of the file
 
 **Example I:** Move to start/end of the in normal mode
-- Switch to normal mode by hitting `ESC`. Type `G` to move to the last
-line of the file
+- Switch to normal mode by hitting `ESC`. Type `G` (i.e. SHIFT+g) to move
+to the last line of the file
 - Switch to normal mode by hitting `ESC`. Type `gg` to move to the first
 line of the file
 
