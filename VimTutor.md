@@ -149,7 +149,7 @@ use `3dd` to delete three lines together.
 
 To undo your last command, use command `u`.
 
-**Example XI:** Correct the text lines marked by -->, then undo the
+**Example VI:** Correct the text lines marked by -->, then undo the
 correction.
 
 - Open *editing.txt* and navigate to Example XI. Make sure you are in
@@ -163,7 +163,7 @@ redo your second last deletion.
 The text deleted last time is stored and can be put back with command
 `p`. This works just like cut & paste in other editors like notepad.
 
-**Example VI:** Correct the text lines marked by -->.
+**Example VII:** Correct the text lines marked by -->.
 
 - Open *editing.txt* and navigate to Example VI. Make sure you are in
 normal mode by hitting `ESC`.
@@ -178,7 +178,7 @@ Command `r` is to replace one character at the cursor with new character
 you input. The command capital `R` is used to replace more than one
 character.
 
-**Example VII:** Correct the text lines marked by -->.
+**Example VIII:** Correct the text lines marked by -->.
 
 - Open *editing.txt* and navigate to Example VII. Make sure you are in
 normal mode by hitting `ESC`.
@@ -196,7 +196,7 @@ the text corresponding to the motion, and switches you to insert mode.
 E.g., command `cw` removes the word and switches to insert mode so that
 you can type anything you wish to replace the original content.
 
-**Example VIII:** Correct the text lines marked by -->.
+**Example IX:** Correct the text lines marked by -->.
 
 - Open *editing.txt* and navigate to Example VIII. Make sure you are in
 normal mode by hitting `ESC`.
@@ -212,7 +212,7 @@ switched to visual mode, and by moving cursor you can change the range
 of text being selected. The visually selected text can be copied using yank
 command `y` and pasted with command `p`.
 
-**Example IX:** Complete the text lines marked by -->.
+**Example X:** Complete the text lines marked by -->.
 
 - Open *editing.txt* and navigate to Example IX. Make sure you are in
 normal mode by hitting `ESC`.
@@ -234,7 +234,7 @@ in a **buffer**. In order to work with multiple buffers, names from "a"
 to "z" can be assigned to buffers. E.g., command `"ayy` will assign name
 "a" to the line you just copy.
 
-**Example X:** Order the sentences 1-3 in correct order.
+**Example XI:** Order the sentences 1-3 in correct order.
 
 - Open *editing.txt* and navigate to Example X. Make sure you are in
 normal mode by hitting `ESC`.
