@@ -11,7 +11,7 @@
     support to poor children in Uganda!
     - Vim is available for many platforms. Vim has a graphic user
     interface, with menus and support for the mouse, while it also
-    supports textmode in terminals， which is perfect for remote
+    supports textmode in terminals, which is perfect for remote
     access/administration (like Quest).
     - Vim is perfect for programming. Vim supports all great features
     for code editors: auto-completion, syntax highlighting, screen
@@ -56,7 +56,7 @@ you feel comfortable with that.
 
 - Open *introduction.txt* and make sure you are in normal mode by
 hitting `ESC`.
-- Navigate to Line 2 (empty) with `j`.
+- Navigate to Line 2 (empty) with movement or arrow keys.
 - Press `i`, and you should notice the bottom left shows "-- INSERT --",
 which indicates you have switched to insert mode. Now you can type new
 text as you like.
@@ -80,7 +80,11 @@ You can also try them in Example II.
 - In the opened *introduction.txt*, type `:q!` and hit `ENTER/RETURN` to exit
 WITHOUT saving the changes.
 - Reopen *introduction.txt*, insert some text with commands `o` or `a`.
-Type `:wq` and hit `ENTER/RETURN` to exit WITH saving the changes.
+Type `:wq` and hit `ENTER/RETURN` to exit WITH saving the changes. `w`
+is short for "write" and `q` is short for "quit".
+- There are two other save and quit methods while a file is open: (i) When in
+normal mode type `ZZ` (i.e. `SHIFT+z+z`). (ii) Type `:` to switch to
+command-line mode from normal mode then type `x` and hit `ENTER/RETURN`.
 
 --------------
 
@@ -122,7 +126,7 @@ normal mode by hitting `ESC`.
 A **count** can be inserted before the motion to delete more. E.g.,
 `d2w` is used to two words at one time.
 
-**Example IV:** Delete all UPCASE words marked by -->.
+**Example IV:** Delete all UPPERCASE words marked by -->.
 
 - Open *editing.txt* and navigate to Example IV. Make sure you are in
 normal mode by hitting `ESC`.
@@ -141,7 +145,20 @@ normal mode by hitting `ESC`.
 - Repeat until all lines marked by --> are deleted. You can also try
 use `3dd` to delete three lines together.
 
-### 2. Put Command
+### 2. Undo command
+
+To undo your last command, use command `u`.
+
+**Example XI:** Correct the text lines marked by -->, then undo the
+correction.
+
+- Open *editing.txt* and navigate to Example XI. Make sure you are in
+normal mode by hitting `ESC`.
+- Use command `x` to correct the line marked by -->.
+- Now hit `u`, it will undo your last deletion. Hit `u` again, it will
+redo your second last deletion.
+
+### 3. Put Command
 
 The text deleted last time is stored and can be put back with command
 `p`. This works just like cut & paste in other editors like notepad.
@@ -151,11 +168,11 @@ The text deleted last time is stored and can be put back with command
 - Open *editing.txt* and navigate to Example VI. Make sure you are in
 normal mode by hitting `ESC`.
 - Move your the cursor to the beginning of word "some", and hit `dw`.
-- Move your the cursor to the space behind word "are", and hit `p`. You
+- Move your the cursor to the space after "are", and hit `p`. You
 should have moved word some to the correct position.
-- Repeat until all lines marked by --> are deleted.
+- Repeat until all lines marked by --> are corrected.
 
-### 3. Replace Command
+### 4. Replace Command
 
 Command `r` is to replace one character at the cursor with new character
 you input. The command capital `R` is used to replace more than one
@@ -165,14 +182,14 @@ character.
 
 - Open *editing.txt* and navigate to Example VII. Make sure you are in
 normal mode by hitting `ESC`.
-- Move your the cursor to the character "u" in word "sume", and hit
+- Move the cursor to the character "u" in word "sume", and hit
 `ro`. You should have corrected character "u" by "o". It also
 automatically switches back to normal mode.
 - Move your the cursor to the character "q" in word "misqhdsi", and hit
-`Rtake`. You should have corrected the word "misqhdsi" by "mistake". Hit
+`Rtakes`. You should have corrected the word "misqhdsi" by "mistakes". Hit
 `ESC` to switch back to normal mode.
 
-### 4. Change Command
+### 5. Change Command
 
 The change command `c` works very similarly as command `d`. It removes
 the text corresponding to the motion, and switches you to insert mode.
@@ -188,11 +205,11 @@ Type the correct word "some" and hit `ESC` to switch back to normal mode.
 - Move your the cursor to character "&", and hit `c$`. Type the correct
 content and hit `ESC` to switch back to normal mode.
 
-### 5. Visual Mode
+### 6. Visual Mode
 
 Command `v` is used to select text visually. After hit `v`, you will be
 switched to visual mode, and by moving cursor you can change the range
-of text being selected. The visually selected text can be copied use yank
+of text being selected. The visually selected text can be copied using yank
 command `y` and pasted with command `p`.
 
 **Example IX:** Complete the text lines marked by -->.
@@ -210,7 +227,7 @@ Command `y` can be also used similarly as `d` or `c` by combining it
 with motion like `w` and `$`. E.g., you can use `y$` in the example above.
 You can also use `yy` to copy an entire line.
 
-### 6. Named Buffer
+### 7. Named Buffer
 
 When you use deletion command `d` or yank command `y`, the text is saved
 in a **buffer**. In order to work with multiple buffers, names from "a"
@@ -227,19 +244,6 @@ normal mode by hitting `ESC`.
 - Now move the empty space below. First hit `"bp` to recover Sentence 1,
 then hit `"cp` to recover Sentence 2, and finally, hit  `"ap` to recover
 Sentence 1.
-
-### 7. Undo command
-
-To undo your last command, use command `u`.
-
-**Example XI:** Correct the text lines marked by -->, then undo the
-correction.
-
-- Open *editing.txt* and navigate to Example XI. Make sure you are in
-normal mode by hitting `ESC`.
-- Use command `x` to correct the line marked by -->.
-- Now hit `u`, it will undo your last deletion. Hit `u` again, it will
-redo your second last deletion.
 
 --------------
 
