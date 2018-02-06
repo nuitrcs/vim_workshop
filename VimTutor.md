@@ -52,6 +52,7 @@ vim introduction.txt
 - Press `h`, `j`, `k`, `l` or arrows to move your cursor around until
 you feel comfortable with that.
 
+\
 **Example II:** Insert text in Line 2 of *introduction.txt*.
 
 - Open *introduction.txt* and make sure you are in normal mode by
@@ -75,6 +76,7 @@ mode.
 
 You can also try them in Example II.
 
+\
 **Example III:** Quit with/without saving in Vim
 
 - In the opened *introduction.txt*, type `:q!` and hit `ENTER/RETURN` to exit
@@ -111,6 +113,7 @@ Command `d` is also for deletion. It can be combined with a motion
 command. E.g. `dw` is used to delete a word, and `d$` is used to delete
 to the end of the line.
 
+\
 **Example II:** Correct the text lines marked by -->.
 
 - Open *editing.txt* and navigate to Example II. Make sure you are in
@@ -119,6 +122,7 @@ normal mode by hitting `ESC`.
 hit `dw`.
 - Repeat until all lines marked by --> are corrected.
 
+\
 **Example III:** Correct the text lines marked by -->.
 
 - Open *editing.txt* and navigate to Example III. Make sure you are in
@@ -129,6 +133,7 @@ normal mode by hitting `ESC`.
 A **count** can be inserted before the motion to delete more. E.g.,
 `d2w` is used to delete two words at one time.
 
+\
 **Example IV:** Delete all UPPERCASE words marked by -->.
 
 - Open *editing.txt* and navigate to Example IV. Make sure you are in
@@ -140,6 +145,7 @@ In addition to those mentioned above, command `dd` can be used to delete
  a whole line. Note here to delete multiple lines with count, use `3dd`,
  rather than `d3d`.
 
+\
 **Example V:** Delete all lines marked by -->
 
 - Open *editing.txt* and navigate to Example V. Make sure you are in
@@ -262,6 +268,7 @@ to the last line of the file
 - Switch to normal mode by hitting `ESC`. Type `gg` to move to the first
 line of the file
 
+\
 **Example II:** Move to start/end of the file in command-line mode
 - Switch to command-line mode by hitting `ESC` and then typing `:`. Type
 `$` and hit `ENTER/RETURN` to move to the last line of the file
@@ -274,10 +281,12 @@ line of the file
 - Hit `ESC`, type the number of the line, say 14, and then type `G` (i.e.
 `SHIFT+g`)
 
+\
 **Example IV:** Move to a line using the line number in command-line mode
 - Hit `ESC`, type `:`, then type the number of the line, say 23, hit
 `ENTER/RETURN`
 
+\
 **Example V:** Let's make sure we moved to 23<sup>rd</sup> line by showing
 the line numbers before each line.
 - Hit `ESC`, type `:set nu` (or equally `:set number`), hit `ENTER/RETURN`
@@ -304,6 +313,7 @@ cursor location.
 - If you type `'a`, this will take you to the beginning of line on which
 mark "a" has been set
 
+\
 **Example VII:** Set mark "c" on the second comma (,) of the 20<sup>th</sup>
 line in *animals.txt*.
 - Hit `ESC`, type `20G` (navigate to line 20) and move to the
@@ -311,7 +321,7 @@ second comma by hitting `l` key (or right arrow key)
 - Type `mc` (while on the normal mode) to set the mark "c" to the
 cursor location.
 
-
+\
 **Example VIII:** Now we have to marks "a" and "c", it will be useful to
 know how to review current marks and delete them if necessary.
 - Hit `ESC`, type `:` to switch to command-line mode
@@ -335,6 +345,7 @@ Forward slash, `/`, is used to search the trailing pattern, in this case
 the cursor's current location and move the cursor to the beginning of
 the pattern.
 
+\
 **Example X:** Find the next *bear* pattern in *animals.txt*
 file from the normal mode.
 - Hit `ESC` to switch to normal mode then hit `n`
@@ -342,6 +353,7 @@ file from the normal mode.
 Each time you hit `n` the next matching pattern will be found and the
 cursor will move to that location.
 
+\
 **Example XI:** Find the previous *bear* pattern in *animals.txt*
 file from the normal mode.
 - Hit `ESC` to switch to normal mode then hit `N` (i.e. `SHIFT+n`)
@@ -349,6 +361,7 @@ file from the normal mode.
 Each time you hit `N` the previous matching pattern will be found and
 the cursor will move to that location.
 
+\
 **Example XII:** Find the pattern *badger* only if it is a whole word
 in *animals.txt* file from the normal mode.
 - Hit `ESC` to switch to normal mode
@@ -361,6 +374,7 @@ with `/badger` will not be useful as it will find any pattern containing
 `\<pattern\>` where `\<` represents the beginning of the word, and
 `\>` represents the end of the word.
 
+\
 **Example XIII:** Find the next line containing *bear* pattern in
 *animals.txt* file from the command-line mode.
 - Hit `ESC` and type `:` to go to command-line mode
@@ -375,7 +389,7 @@ The substitute operation can be done in command-line mode using `s` (short
 for substitute). The general format of a substitute is `:s/foo/bar` where
 *foo* is the pattern to be substituted by *bar*.
 
-
+\
 **Example XIV:** Replace the first instance of "rabbit" with "squirrel"
 in the 2<sup>nd</sup> line of *animals.txt* using substitute. Save and exit.
 - First let's create a backup file i.e. *animals_bckp.txt*
@@ -399,8 +413,8 @@ an "and".
 and hit `ENTER/RETURN`
 - Typing `:s/rabbit/squirrel/ | w | q` and hitting `ENTER/RETURN` will
 accomplish the same task
-<p>
 
+\
 **Example XV:** Replace the first instance of "rabbit" with "squirrel"
 in all the lines of *animals.txt* using substitute. Save and exit.
 
@@ -416,6 +430,7 @@ vim animals.txt
 considered for substitution.
 <p>
 
+\
 **Example XVI:** Replace all instances of "fox" with "wolf"
 in all the lines of *animals.txt* using substitute. Save and exit.
 
@@ -429,8 +444,8 @@ vim animals.txt
 
 Here `g` is short for global and it is used to replace all instances of
 the pattern in a line.
-<p>
 
+\
 **Example XVII:** Replace all instances of "wolf" with "fox" from line 20
  to 30 in *animals.txt* using substitute. Save and exit.
 
@@ -444,8 +459,8 @@ vim animals.txt
 
 `20,30` before `s/wolf/fox/g` indicates the range of lines to be
 considered for substitution and it is inclusive.
-<p>
 
+\
 **Example XVIII:** Replace all instances of "badger" with "Tasmanian devil"
 in all the line of *animals.txt* using substitute but require
 confirmation before the change. Save and exit. Make
@@ -461,8 +476,8 @@ vim animals.txt
 
 `\<badger\>` searchers for only the whole words exactly matching badger.
 `c` at the end is used for confirmation request.
-<p>
 
+\
 **Example XIX:** Replace all instances of "Tasmanian devil" with "badger"
 in all the line of *animals.txt* using substitute. Make the search case
 insensitive. Save and exit.
@@ -490,6 +505,7 @@ the document.
 The `d` in `g/goat/d` indicates a deletion operation. Thus the whole
 command means do the deletion for all lines that have "goat" pattern.
 
+\
 **Example XXI:** Delete all the lines that do not have the pattern
 "goat" from *animals.txt*. After completing the task, undo the change.
 - Hit `ESC` and type `:` go to command-line mode
@@ -501,6 +517,7 @@ command means do the deletion for all lines that do not have "goat" pattern.
 
 
 --------------
+
 # More on Editing Text From Bash Shell (no UI)
 
 In cases where you need to repeat some specific tasks in editing your
@@ -511,7 +528,6 @@ a workflow for batch processing, UI is impractical.
 For such tasks, Vim can be used from your bash command line. It is
 possible to pass directives to Vim from terminal.
 
-\
 **Example I:** Replace all instances of "wolf" with "fox"
 in all the lines of *animals.txt* using Vim's substitute function
 without starting the UI.
@@ -569,6 +585,7 @@ the same to quit the last file.
 - To quit from all panes instantaneously you could type `:qall!` and
 hit `ENTER/RETURN`
 
+\
 **Example II:** Open the two files *animals.txt* and *editing.txt* in a
 split windows oriented vertically, then quit all without saving.
 - Issue the following command on your terminal
@@ -579,6 +596,7 @@ vim -O animals.txt editing.txt
 typing `:`
 - Type `qall!` and hit `ENTER/RETURN`
 
+\
 **Example III** Open the *animals.txt* first then open *editing.txt* by
 splitting the window horizontally. Finally open *introduction.txt* in a
 vertically split pane. Move the cursor from one pane to another.
@@ -594,6 +612,7 @@ vim animals.txt
 - While holding CTRL hit `w` twice (i.e. `CTRL+w+w`) which will move the
 cursor to the next pane
 - Type `:qall!` to quit all windows
+
 
 --------------
 
@@ -616,6 +635,7 @@ vim animals.txt
 The general format to issue a system command from Vim interface is `:!<command>`.
 Note: `:!!` repeats the last command issued
 
+\
 **Example II:** Open Vim interface and export the current contents of the
 folder to this empty document. Save the document as *folder_contents.txt*.
 - Issue the following command on your terminal
@@ -631,6 +651,7 @@ vim
 following expression (in this case `!ls`) in the current buffer below the
 cursor.
 
+\
 **Example III:** Open *animals.txt* with Vim and revert the whole buffer
 on the screen. Save the file and exit.
 HINT: `tac` (i.e. the reverse of `cat`) concatenates and writes files in
@@ -647,6 +668,7 @@ vim animals.txt
 buffer (practically the file). `!tac` is the UNIX command issued from
 vim interface that reversed the buffer.
 
+\
 **Example IV:** Open *animals.txt* with Vim and revert the order of lines
 from 10 to the end of file. Undo the change and quit without saving.
 - Issue the following command on your terminal
@@ -658,6 +680,7 @@ vim animals.txt
 - Switch to normal mode by hitting `ESC` and then `u`
 - Type `:q!` to quit without saving
 
+\
 **Example IV:** Open *helloworld.py* with Vim. Change the duration of
 sleep from 10 seconds to 4 seconds, save the file and run it without
 quitting Vim.
