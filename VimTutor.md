@@ -549,6 +549,8 @@ vim animals.txt -s operations.vim
 The flag "-s" reads normal mode commands from a script file and applies
 them to the input file
 
+--------------
+
 # Split Windows for Opening Multiple Files
 It is possible to open multiple files spreading horizontally or
 vertically in a single UI window. This can be achieved while you are
@@ -592,6 +594,8 @@ vim animals.txt
 - While holding CTRL hit `w` twice (i.e. `CTRL+w+w`) which will move the
 cursor to the next pane
 - Type `:qall!` to quit all windows
+
+--------------
 
 # Running Shell Commands from Vim
 While you are working on your text file with Vim, you may realize that
@@ -673,6 +677,8 @@ vim helloworld.py
 - Hit `ENTER/RETURN` when the run is finished (you will be prompted) which
 will return the screen to Vim interface.
 
+--------------
+
 # Need More Help?
 Any moment during your Vim session hit `ESC`, type `:help` and hit `ENTER/RETURN`.
 To quit from help page type `:q!`.
@@ -682,6 +688,8 @@ want to learn. During your Vim session, hit `ESC`, type `:help :<command>`
 and hit `ENTER/RETURN`. For instance, if you would like to see more
 information about `substitute` you should write `:help :s` and hit
 `ENTER/RETURN`.
+
+--------------
 
 # Additional Resources
 
