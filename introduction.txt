@@ -6,7 +6,7 @@ Vim is rock stable and is continuously being developed to become even better. Am
 
     persistent, multi-level undo tree
     extensive plugin system
-    support for hundreds of programming languages and file formats
+    support for many programming languages and file formats
     powerful search and replace
     integrates with many tools
 

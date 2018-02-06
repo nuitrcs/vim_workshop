@@ -18,8 +18,8 @@ Example II
 Example III
 
     There are some mistakes in this sentence.
---> There are some mistakes in this sentence. &328afhjda823a;jkd
---> There are some mistakes in this sentence. &328dsssssssfffffffffffa
+--> There are some mistakes in this sentence. &328afhj da823a;jkd
+--> There are some mistakes in this sentence. &328dss sss ssfffffffffffa
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Example IV

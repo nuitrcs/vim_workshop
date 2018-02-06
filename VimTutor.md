@@ -7,7 +7,7 @@
     editor "vi".
     - Vim is included as "vi" with most UNIX systems and with Apple OS X.
 2. Why Vim?
-    - Vim is free and open source. It also a charityware that gives
+    - Vim is free and open source. It is also a charityware that gives
     support to poor children in Uganda!
     - Vim is available for many platforms. Vim has a graphic user
     interface, with menus and support for the mouse, while it also
@@ -35,9 +35,9 @@ several ways, e.g., pressing `i` when in normal mode.
 - Command-line mode: For entering editor commands, such as help, search,
  save, quit. Press `:` when in normal mode to enter command-line mode.
 - Visual mode: For navigation and manipulation of text selections.
-This mode allows you to perform most normal commands, and a few extra
-commands, on selected text. Press `v` when in normal mode to enter
-visual mode.
+This mode allows you to perform most normal mode commands, and a few extra
+others, on selected (i.e. highlighted) text. Press `v` when in normal
+mode to enter visual mode.
 
 **Example I:** Navigation in Vim with `h, j, k, l` or arrow keys.
 
@@ -152,7 +152,7 @@ To undo your last command, use command `u`.
 **Example VI:** Correct the text lines marked by -->, then undo the
 correction.
 
-- Open *editing.txt* and navigate to Example XI. Make sure you are in
+- Open *editing.txt* and navigate to Example VI. Make sure you are in
 normal mode by hitting `ESC`.
 - Use command `x` to correct the line marked by -->.
 - Now hit `u`, it will undo your last deletion. Hit `u` again, it will
@@ -165,7 +165,7 @@ The text deleted last time is stored and can be put back with command
 
 **Example VII:** Correct the text lines marked by -->.
 
-- Open *editing.txt* and navigate to Example VI. Make sure you are in
+- Open *editing.txt* and navigate to Example VII. Make sure you are in
 normal mode by hitting `ESC`.
 - Move your the cursor to the beginning of word "some", and hit `dw`.
 - Move your the cursor to the space after "are", and hit `p`. You
@@ -180,7 +180,7 @@ character.
 
 **Example VIII:** Correct the text lines marked by -->.
 
-- Open *editing.txt* and navigate to Example VII. Make sure you are in
+- Open *editing.txt* and navigate to Example VIII. Make sure you are in
 normal mode by hitting `ESC`.
 - Move the cursor to the character "u" in word "sume", and hit
 `ro`. You should have corrected character "u" by "o". It also
@@ -198,7 +198,7 @@ you can type anything you wish to replace the original content.
 
 **Example IX:** Correct the text lines marked by -->.
 
-- Open *editing.txt* and navigate to Example VIII. Make sure you are in
+- Open *editing.txt* and navigate to Example IX. Make sure you are in
 normal mode by hitting `ESC`.
 - Move your the cursor to the beginning of word "abcd", and hit `cw`.
 Type the correct word "some" and hit `ESC` to switch back to normal mode.
@@ -214,7 +214,7 @@ command `y` and pasted with command `p`.
 
 **Example X:** Complete the text lines marked by -->.
 
-- Open *editing.txt* and navigate to Example IX. Make sure you are in
+- Open *editing.txt* and navigate to Example X. Make sure you are in
 normal mode by hitting `ESC`.
 - Move your the cursor to the beginning of word "are", and hit `v`.
 Now you are switched to visual mode. Navigate your cursor to the end of
@@ -236,7 +236,7 @@ to "z" can be assigned to buffers. E.g., command `"ayy` will assign name
 
 **Example XI:** Order the sentences 1-3 in correct order.
 
-- Open *editing.txt* and navigate to Example X. Make sure you are in
+- Open *editing.txt* and navigate to Example XI. Make sure you are in
 normal mode by hitting `ESC`.
 - Move cursor to first line (Sentence 3), and hit `"ayy`.
 - Move cursor to second line (Sentence 1), and hit `"byy`.
