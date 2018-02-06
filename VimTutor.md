@@ -1,4 +1,4 @@
-# The very basics
+# The Very Basics
 
 ### Introduction
 
@@ -145,7 +145,7 @@ normal mode by hitting `ESC`.
 - Repeat until all lines marked by --> are deleted. You can also try
 use `3dd` to delete three lines together.
 
-### 2. Undo command
+### 2. Undo Command
 
 To undo your last command, use command `u`.
 
@@ -249,11 +249,11 @@ Sentence 1.
 
 # More on Navigation and Search
 Let's discuss some fast navigation techniques between lines and pattern
-search methods in vim. For these exercises we will use *animals.txt*.
+search methods in Vim. For these exercises we will use *animals.txt*.
 
-#### 1. Moving to start and end of the file
+#### 1. Moving to Start and End of the File
 
-**Example I:** Move to start/end of the in normal mode
+**Example I:** Move to start/end of the file in normal mode
 - Switch to normal mode by hitting `ESC`. Type `G` (i.e. SHIFT+g) to move
 to the last line of the file
 - Switch to normal mode by hitting `ESC`. Type `gg` to move to the first
@@ -265,7 +265,7 @@ line of the file
 - Hit `ESC` then type `:` to switch to command-line mode. Type `0` and hit
 `ENTER/RETURN` to move to the beginning of the file
 
-#### 2. Moving to an arbitrary line
+#### 2. Moving to an Arbitrary Line
 
 **Example III:** Move to a line using the line number in normal mode
 - Hit `ESC`, type the number of the line, say 14, and then type `G` (i.e.
@@ -310,13 +310,15 @@ cursor location.
 
 
 **Example VIII:** Now we have to marks "a" and "c", it will be useful to
-know how to review current marks.
+know how to review current marks and delete them if necessary.
 - Hit `ESC`, type `:` to switch to command-line mode
 - Type `marks` while in command-line mode and hit `ENTER/RETURN`. This will
 list all the default and user defined marks.
+- Hit `ESC`, type `:` to switch to command-line mode and type `delmarks a`
+to delete mark "a"
 
 
-#### 4. Search for a pattern within the text file
+#### 4. Pattern Search
 Another strong suite of Vim lies in its pattern search functionality. It
 is possible to search just for just a pattern, multiple patterns,
 whole words, patterns that are in specific order, duplicate words etc.
@@ -331,7 +333,7 @@ the cursor's current location and move the cursor to the beginning of
 the pattern
 
 **Example X:** Find the next *bear* pattern in *animals.txt*
-file from the normal mode.
+file from the normNNal mode.
 - Hit `ESC` to switch to normal mode then hit `n`
 
 Each time you hit `n` the next matching pattern will be found and the
@@ -390,9 +392,9 @@ and `wq`. Instead of doing the substitution and write&quit in two steps
 we could have stack the commands using the pipe sign `|` which acts as
 an "and".
 
-- Type `:` to start the command-line mode and write `s/rabbit/squirrel | wq`
+- Type `:` to start the command-line mode and write `s/rabbit/squirrel/ | wq`
 and hit `ENTER/RETURN`
-- Typing `:s/rabbit/squirrel | w | q` and hitting `ENTER/RETURN` will
+- Typing `:s/rabbit/squirrel/ | w | q` and hitting `ENTER/RETURN` will
 accomplish the same task
 <p>
 
@@ -404,7 +406,7 @@ in all the lines of *animals.txt* using substitute. Save and exit.
 vim animals.txt
 ```
 - Hit `ESC` and type `:` go to command-line mode
-- Write `%s/rabbit/squirrel` and hit `ENTER/RETURN`
+- Write `%s/rabbit/squirrel/` and hit `ENTER/RETURN`
 - Type `:` to start the command-line then type `x` and hit `ENTER/RETURN`
 
 `%` indicates that whole buffer (practically whole document) will be
@@ -419,7 +421,7 @@ in all the lines of *animals.txt* using substitute. Save and exit.
 vim animals.txt
 ```
 - Hit `ESC` and type `:` go to command-line mode
-- Write `%s/rabbit/squirrel/g` and hit `ENTER/RETURN`
+- Write `%s/fox/wolf/g` and hit `ENTER/RETURN`
 - Hit `ESC` to switch to normal mode and `ZZ`
 
 Here `g` is short for global and it is used to replace all instances of
@@ -434,10 +436,10 @@ the pattern in a line.
 vim animals.txt
 ```
 - Hit `ESC` and type `:` go to command-line mode
-- Write `20,30s/rabbit/squirrel/g` and hit `ENTER/RETURN`
+- Write `20,30s/wolf/fox/g` and hit `ENTER/RETURN`
 - Hit `ESC` to switch to normal mode and type `ZZ`
 
-`20,30` before `s/rabbit/squirrel/g` indicates the range of lines to be
+`20,30` before `s/wolf/fox/g` indicates the range of lines to be
 considered for substitution and it is inclusive.
 <p>
 
@@ -505,8 +507,8 @@ a workflow for batch processing, UI is impractical.
 
 For such tasks, Vim can be used from your bash command line. It is
 possible to pass directives to Vim from terminal.
-<p>
 
+\
 **Example I:** Replace all instances of "wolf" with "fox"
 in all the lines of *animals.txt* using Vim's substitute function
 without starting the UI.
@@ -521,10 +523,10 @@ to substitute all instances of "wolf" with "fox" in *animals.txt* and
 save&quit the file respectively when in command-line mode. The flag "-c"
 executes the following command as if the vim is operating in command-line
 mode.
-<p>
 
+\
 **Example II:** Prepare a vim script (say *operations.vim*) that includes
-the commands to be applied on the *animals.txt*. The commands should \
+the commands to be applied on the *animals.txt*. The commands should
 replace all instances of "bear" with "giraffe" in all the lines of
 *animals.txt*, save the file and exit.
 
@@ -544,7 +546,7 @@ vim animals.txt -s operations.vim
 The flag "-s" reads normal mode commands from a script file and applies
 them to the input file
 
-# Using split windows for different files in Vim
+# Split Windows for Opening Multiple Files
 It is possible to open multiple files spreading horizontally or
 vertically in a single UI window. This can be achieved while you are
 starting the UI or from within the UI.
@@ -557,7 +559,10 @@ vim -o animals.txt editing.txt
 ```
 - Once the split windows are opened switch to command-line mode by
 typing `:`
-- Type `q!` and hit `ENTER/RETURN`
+- Type `q!` and hit `ENTER/RETURN` to exit the pane you are on. Then repeat
+the same to quit the last file.
+- To quit from all panes instantaneously you could type `:qall!` and
+hit `ENTER/RETURN`
 
 **Example II:** Open the two files *animals.txt* and *editing.txt* in a
 split windows oriented vertically, then quit all without saving.
@@ -567,24 +572,25 @@ vim -O animals.txt editing.txt
 ```
 - Once the split windows are opened switch to command-line mode by
 typing `:`
-- Type `q!` and hit `ENTER/RETURN`
+- Type `qall!` and hit `ENTER/RETURN`
 
 **Example III** Open the *animals.txt* first then open *editing.txt* by
 splitting the window horizontally. Finally open *introduction.txt* in a
 vertically split pane. Move the cursor from one pane to another.
 - Issue the following command on your terminal
 ```bash
-vim -O animals.txt
+vim animals.txt
 ```
 - Switch to command-line mode by typing `:`
 - Type `split editing.txt`
 - Switch to command-line mode by typing `:`
 - Type `vsplit introduction.txt`
 - Switch to normal mode by hitting `ESC`
-- While holding CTRL hit `w` twice (i.e. CTRL+w+w) which will move the
+- While holding CTRL hit `w` twice (i.e. `CTRL+w+w`) which will move the
 cursor to the next pane
+- Type `:qall!` to quit all windows
 
-# Running shell commands from inside the vim
+# Running Shell Commands from Vim
 While you are working on your text file with Vim, you may realize that
 you need some information from your system. Assuming the system is UNIX
 based, you can execute, say, bash commands and obtain the necessary
@@ -599,6 +605,7 @@ vim animals.txt
 - Switch to command-line mode by typing `:`
 - Type `!ls` and hit `ENTER/RETURN`
 - Hit `ENTER/RETURN` again to continue Vim
+- Finally quit by typing `:q!`
 The general format to issue a system command inside the Vim interface is
 typing `:!<command>`.
 Note: `:!!` repeats the last command issued
@@ -623,7 +630,7 @@ HINT: `tac` (i.e. the reverse of `cat`) concatenates and writes files in
 reverse
 - Issue the following command on your terminal
 ```bash
-vim *animals.txt*
+vim animals.txt
 ```
 - Switch to command-line mode by typing `:`
 - Type `% !tac` and hit `ENTER/RETURN`
@@ -635,8 +642,6 @@ vim interface that reversed the buffer.
 
 **Example IV:** Open *animals.txt* with Vim and revert the order of lines
 from 10 to the end of file. Undo the change and quit without saving.
-HINT: `tac` (i.e. the reverse of `cat`) concatenates and writes files in
-reverse
 - Issue the following command on your terminal
 ```bash
 vim animals.txt
