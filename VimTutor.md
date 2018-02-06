@@ -104,6 +104,9 @@ normal mode by hitting `ESC`.
 - Move your cursor to the character you want to delete, hit `x`
 - Repeat until all lines marked by --> are corrected.
 
+A **count** can be inserted before the motion to delete more. E.g., `2x`
+is used to delete two characters at one time.
+
 Command `d` is also for deletion. It can be combined with a motion
 command. E.g. `dw` is used to delete a word, and `d$` is used to delete
 to the end of the line.
@@ -124,7 +127,7 @@ normal mode by hitting `ESC`.
 - Repeat until all lines marked by --> are corrected.
 
 A **count** can be inserted before the motion to delete more. E.g.,
-`d2w` is used to two words at one time.
+`d2w` is used to delete two words at one time.
 
 **Example IV:** Delete all UPPERCASE words marked by -->.
 
@@ -223,7 +226,7 @@ line to select the text you would like to copy.
 mode.
 - Navigate to the position you want to paste, hit `p`.
 
-Command `y` can be also used similarly as `d` or `c` by combining it
+Command `y` can be also used alone similar to `d` or `c` by combining it
 with motion like `w` and `$`. E.g., you can use `y$` in the example above.
 You can also use `yy` to copy an entire line.
 
@@ -275,8 +278,8 @@ line of the file
 - Hit `ESC`, type `:`, then type the number of the line, say 23, hit
 `ENTER/RETURN`
 
-**Example V:** Let's make sure we moved to 23rd line by showing the
-line numbers before each line.
+**Example V:** Let's make sure we moved to 23<sup>rd</sup> line by showing
+the line numbers before each line.
 - Hit `ESC`, type `:set nu` (or equally `:set number`), hit `ENTER/RETURN`
 - Type `:set nonu` (or equally `:set nonumber`) and hit `ENTER/RETURN` to
 hide the line numbers
@@ -320,7 +323,7 @@ to delete mark "a"
 
 #### 4. Pattern Search
 Another strong suite of Vim lies in its pattern search functionality. It
-is possible to search just for just a pattern, multiple patterns,
+is possible to search for single pattern, multiple patterns,
 whole words, patterns that are in specific order, duplicate words etc.
 
 **Example IX:** Find the first *bear* pattern in *animals.txt* file
@@ -330,21 +333,21 @@ from the normal mode.
 Forward slash, `/`, is used to search the trailing pattern, in this case
 "bear". Consequently, `/bear` will find the first matching pattern after
 the cursor's current location and move the cursor to the beginning of
-the pattern
+the pattern.
 
 **Example X:** Find the next *bear* pattern in *animals.txt*
-file from the normNNal mode.
+file from the normal mode.
 - Hit `ESC` to switch to normal mode then hit `n`
 
 Each time you hit `n` the next matching pattern will be found and the
-cursor will move to that location
+cursor will move to that location.
 
 **Example XI:** Find the previous *bear* pattern in *animals.txt*
 file from the normal mode.
 - Hit `ESC` to switch to normal mode then hit `N` (i.e. `SHIFT+n`)
 
 Each time you hit `N` the previous matching pattern will be found and
-the cursor will move to that location
+the cursor will move to that location.
 
 **Example XII:** Find the pattern *badger* only if it is a whole word
 in *animals.txt* file from the normal mode.
@@ -352,10 +355,10 @@ in *animals.txt* file from the normal mode.
 - Type `/` first before the pattern to be searched
 - Type `\<badger\>` and hit `ENTER/RETURN`
 
-Since we are looking for a whole word, a simply searching for "badger"
-using `/badger` will not be useful as it will find any pattern containing
+Since we are looking for a whole word, simply searching for "badger"
+with `/badger` will not be useful as it will find any pattern containing
 "badger" such as "honeybadger". To search whole words, we should use
-`\<pattern\>` where `\<` represents the beginning of a word, and
+`\<pattern\>` where `\<` represents the beginning of the word, and
 `\>` represents the end of the word.
 
 **Example XIII:** Find the next line containing *bear* pattern in
@@ -369,12 +372,12 @@ and replacing strings. Vim is no exception and it offers many additional
 features.
 
 The substitute operation can be done in command-line mode using `s` (short
-for substitute). The general format of a substitute is `s/foo/bar` where
+for substitute). The general format of a substitute is `:s/foo/bar` where
 *foo* is the pattern to be substituted by *bar*.
-<p>
+
 
 **Example XIV:** Replace the first instance of "rabbit" with "squirrel"
-in the 2<sup>th</sup> line of *animals.txt* using substitute. Save and exit.
+in the 2<sup>nd</sup> line of *animals.txt* using substitute. Save and exit.
 - First let's create a backup file i.e. *animals_bckp.txt*
 for *animals.txt*, then open *animals.txt* using vim from the terminal.
 ```bash
@@ -502,7 +505,7 @@ command means do the deletion for all lines that do not have "goat" pattern.
 
 In cases where you need to repeat some specific tasks in editing your
 files many times, opening the UI -user interface- and carrying out the
-tasks will become inefficient. Furthermore if you are submitting
+tasks will become inefficient. Furthermore, if you are submitting
 a workflow for batch processing, UI is impractical.
 
 For such tasks, Vim can be used from your bash command line. It is
@@ -606,8 +609,7 @@ vim animals.txt
 - Type `!ls` and hit `ENTER/RETURN`
 - Hit `ENTER/RETURN` again to continue Vim
 - Finally quit by typing `:q!`
-The general format to issue a system command inside the Vim interface is
-typing `:!<command>`.
+The general format to issue a system command from Vim interface is `:!<command>`.
 Note: `:!!` repeats the last command issued
 
 **Example II:** Open Vim interface and export the current contents of the
@@ -620,6 +622,7 @@ vim
 - Type `r !ls` and hit `ENTER/RETURN`
 - Hit `ENTER/RETURN` again to continue Vim
 - Switch to command-line mode by typing `:` and type `w folder_contents.txt`
+
 `r` in `r !ls` is short for read which reads and inputs the result of the
 following expression (in this case `!ls`) in the current buffer below the
 cursor.
