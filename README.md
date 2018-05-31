@@ -1,6 +1,6 @@
-# Git Workshop
+# VIM Workshop
 
-Materials for git workshops taught by Northwestern IT Research Computing
+Materials for VIM workshops taught by Northwestern IT Research Computing
 Services.
 
 # Setup
