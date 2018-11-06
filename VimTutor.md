@@ -243,7 +243,7 @@ Command `y` can be also used alone similar to `d` or `c` by combining it
 with motion like `w` and `$`. E.g., you can use `y$` in the example above.
 You can also use `yy` to copy an entire line.
 
-### 7. Named Buffer
+### 7. Named Buffer (aka Registers)
 
 When you use deletion command `d` or yank command `y`, the text is saved
 in a **buffer**. In order to work with multiple buffers, names from "a"
