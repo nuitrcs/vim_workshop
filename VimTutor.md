@@ -87,6 +87,13 @@ is short for "write" and `q` is short for "quit".
 - There are two other save and quit methods while a file is open: (i) When in
 normal mode type `ZZ` (i.e. `SHIFT+z+z`). (ii) Type `:` to switch to
 command-line mode from normal mode then type `x` and hit `ENTER/RETURN`.
+- You can also save your changes to other files and continue working on
+the same file or the newly saved file. Reopen *introduction.txt*, insert 
+some text. 
+    - Type `:w <filename>` and hit `ENTER/RETURN` to save the changes 
+    to *filename* and continue working on *introduction.txt*. 
+    - Type `:sav <filename>`  and hit `ENTER/RETURN` to save changes 
+    to *filename* and continue working on *filename*
 
 --------------
 
