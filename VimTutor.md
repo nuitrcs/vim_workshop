@@ -92,7 +92,7 @@ the same file or the newly saved file. Reopen *introduction.txt*, insert
 some text. 
     - Type `:w <filename>` and hit `ENTER/RETURN` to save the changes 
     to *filename* and continue working on *introduction.txt*. 
-    - Type `:sav <filename>`  and hit `ENTER/RETURN` to save changes 
+    - Type `:sav <filename>`  and hit `ENTER/RETURN` to save the changes 
     to *filename* and continue working on *filename*
 
 --------------
