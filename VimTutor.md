@@ -145,12 +145,12 @@ A **count** can be inserted before the motion to delete more. E.g.,
 
 - Open *editing.txt* and navigate to Example IV. Make sure you are in
 normal mode by hitting `ESC`.
-- Move your the first "MEOW", hit `d3w` to delete "MEOW MEOW MEOW".
+- Move your the first "MEOW", hit `d3w` or `3dw` to delete "MEOW MEOW MEOW".
 - Repeat until all lines marked by --> are corrected.
 
 In addition to those mentioned above, command `dd` can be used to delete
- a whole line. Note here to delete multiple lines with count, use `3dd`,
- rather than `d3d`.
+ a whole line. Note here to delete multiple lines with count, use `3dd`
+ or `d3d`.
 
 \
 **Example V:** Delete all lines marked by -->
@@ -159,7 +159,7 @@ In addition to those mentioned above, command `dd` can be used to delete
 normal mode by hitting `ESC`.
 - Move your the cursor to anywhere of a line marked by -->, and hit `dd`
 - Repeat until all lines marked by --> are deleted. You can also try
-use `3dd` to delete three lines together.
+using `3dd` to delete three lines together.
 
 ### 2. Undo Command
 

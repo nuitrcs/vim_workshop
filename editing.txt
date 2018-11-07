@@ -1,34 +1,34 @@
 This document is for practice of Vim editing techniques. Through the tutorial, you can always quit with `:q!` and re-open this file.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example I
+Example I: Use `x` to delete characters
 
     There are some mistakes in this sentence.
 --> There are somee mistakes inn thiis sentence.
 --> There are some mistakkes in this senttence.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example II
+Example II: Use `dw` to delete words
 
     There are some mistakes in this sentence.
 --> There are some some mistakes in this this sentence.
 --> There are are are some mistakes in this sentence.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example III
+Example III: Use `d$` to delete to the end of line
 
     There are some mistakes in this sentence.
 --> There are some mistakes in this sentence. &328afhj da823a;jkd
 --> There are some mistakes in this sentence. &328dss sss ssfffffffffffa
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example IV
+Example IV: Use `<n>dw` with a count argument n to delete n words
 
 --> This is MEOW MEOW MEOW a BLACK RED BLUE YELLOW simple sentence.
 --> This is a simple SKJHF SLKJI IXMZ POKSQS SMCZIIM sentence.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example V
+Example V: Use `dd` and `<n>dd` to delete line(s) 
 
     This is a sentence.
 --> This is a sentence to be deleted.
@@ -41,41 +41,41 @@ Example V
     This is a sentence.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example VI
+Example VI: Use `u` to undo 
 
     There are some mistakes in this sentence.
 --> There are somee mistakess in this sentence.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example VII
+Example VII: Use `p` to put (i.e. paste)
 
     There are some mistakes in this sentence.
 --> There are mistakes some in this sentence.
 --> There are some in this sentence. mistakes
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example VIII
+Example VIII: Use `r` or `R` to replace character(s)
 
     There are some mistakes in this sentence.
 --> There are sume mistakes in this sentence.
 --> There are some misqhdsi in this sentence.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example IX
+Example IX: Use `c` to change the text
 
     There are some mistakes in this sentence.
 --> There are abcd mistakes in this sentence.
 --> There are some &skdjfa;lfjdklajiojiofdkla;dj;sald
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example X
+Example X: Use `v` to switch to visual mode and move the cursor to select
 
     There are some mistakes in this sentence.
 --> There
 --> There
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example XI
+Example XI: Use `"<tag>yy` to yank (copy) and name the buffer 
 
     This is Sentence 3.
     This is Sentence 1.
