@@ -75,7 +75,7 @@ Example X: Use `v` to switch to visual mode and move the cursor to select
 --> There
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example XI: Use `"<tag>yy` to yank (copy) and name the buffer 
+Example XI: Use `"<tag>yy` to yank (copy) and name the buffer, `"<tag>p` to put 
 
     This is Sentence 3.
     This is Sentence 1.
